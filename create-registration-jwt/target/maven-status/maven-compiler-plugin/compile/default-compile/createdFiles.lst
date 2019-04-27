@@ -1,0 +1,9 @@
+org/jt/io/SigningKeyReader.class
+org/jt/io/JwtFileWriter.class
+org/jt/config/ClientConfiguration.class
+org/jt/config/RegistrationJwtConfiguration.class
+org/jt/Application.class
+org/jt/jwt/RegistrationJwtBuilder.class
+org/jt/config/SaveOptionsConfiguration.class
+org/jt/io/SsaFileReader.class
+org/jt/jwt/JwtCollectionBuilder.class

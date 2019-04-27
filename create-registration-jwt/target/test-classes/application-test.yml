@@ -1,0 +1,56 @@
+spring:
+logging:
+  level:
+    org.springframework.web: DEBUG
+    guru.springframework.controllers: DEBUG
+    org.hibernate: DEBUG
+    org.jt: INFO
+
+
+client:
+  id: test-id
+  name: test-name
+  description: test-description
+  transport_kid: test-transport-kid
+  signing_kid: test-signing-kid
+  application_type: test-web
+  subject_type: test-public
+  scope:
+    - test-AISP
+    - test-PISP
+  redirect_uris:
+    - https://redirect-uri1
+    - https://redirect-uri2
+
+registration-jwt:
+  audience:
+    nwb: https://test.natwest.register
+    rbs: https://test.rbs.register
+    ubn: https://test.ulsterni.register
+  scope:
+    - AISP
+    - PISP
+  request_object_encryption_enc: test-request-obj-enc-enc
+  request_object_encryption_alg: test-RSA-OAEP-256
+  request_object_signing_alg: test-RS256
+  response_types:
+    - test-code
+    - test-token
+    - test-code id_token
+  token_endpoint_auth_method: test-tls_client_auth
+  token_endpoint_signing_alg: test-RS256
+  id_token_signed_response_alg: test-RS256
+  grant_types:
+    - test-authorization_code
+    - test-refresh_token
+    - test-client_credentials
+
+generate-options:
+  output_directory: /Users/teste/test-directory
+  overwrite: true
+  targets:
+    - red
+    - blue
+    - green
+
+
