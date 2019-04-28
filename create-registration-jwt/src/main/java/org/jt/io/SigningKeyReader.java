@@ -21,7 +21,6 @@ public class SigningKeyReader {
     private ClientConfiguration clientConfiguration;
     private GenerateOptionsConfiguration generateOptionsConfiguration;
 
-
     @Autowired
     public void setClientConfiguration(ClientConfiguration clientConfiguration) {
         this.clientConfiguration = clientConfiguration;

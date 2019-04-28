@@ -33,6 +33,7 @@ public class GenerateOptionsConfiguration {
         this.targetsList = targetList;
     }
 
+
     @Override
     public String toString() {
         return "GenerateOptionsConfiguration{" +

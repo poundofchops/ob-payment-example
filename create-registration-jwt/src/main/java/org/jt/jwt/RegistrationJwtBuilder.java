@@ -100,7 +100,6 @@ public class RegistrationJwtBuilder {
     }
 
     private JWTClaimsSet buildClaimSet() throws Exception{
-
 //        {
 //            "software_statement": "bl..ah",
 //

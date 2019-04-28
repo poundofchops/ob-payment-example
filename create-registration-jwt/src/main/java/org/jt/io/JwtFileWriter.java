@@ -86,7 +86,6 @@ public class JwtFileWriter {
         }
     }
 
-
     private String getTargetFileName() {
         return clientConfiguration.getId() + "-" +targetName+ ".jwt";
     }

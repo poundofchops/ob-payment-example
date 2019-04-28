@@ -95,6 +95,7 @@ public class ClientConfiguration {
         this.subjectType = subjectType;
     }
 
+
     @Override
     public String toString() {
         return "ClientConfiguration{" +
