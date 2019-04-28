@@ -11,6 +11,7 @@ import java.util.List;
 @ConfigurationProperties(prefix = "client")
 @Component()
 public class ClientConfiguration {
+
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private String id;
@@ -94,7 +95,7 @@ public class ClientConfiguration {
     public void setSubjectType(String subjectType) {
         this.subjectType = subjectType;
     }
-    
+
     @Override
     public String toString() {
         return "ClientConfiguration{" +
