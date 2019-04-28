@@ -15,7 +15,6 @@ import java.util.stream.Stream;
 
 @Service
 public class SsaFileReader {
-
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private ClientConfiguration config;

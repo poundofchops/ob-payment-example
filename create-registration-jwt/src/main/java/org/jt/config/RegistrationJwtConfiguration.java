@@ -14,7 +14,7 @@ import java.util.Map;
 public class RegistrationJwtConfiguration {
     private static final Logger logger = LoggerFactory.getLogger(RegistrationJwtConfiguration.class);
 
-    //claimset
+    // claimset
     // ssa: bl..ah
     private Map<String, String>  audience;
     private String requestObjectSigningAlg;

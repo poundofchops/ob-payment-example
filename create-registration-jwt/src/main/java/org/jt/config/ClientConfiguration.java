@@ -11,7 +11,6 @@ import java.util.List;
 @ConfigurationProperties(prefix = "client")
 @Component()
 public class ClientConfiguration {
-
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private String id;

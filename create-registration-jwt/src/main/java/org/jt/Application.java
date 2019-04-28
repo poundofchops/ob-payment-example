@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application {
 
     public static void main(String[] args) {
+
         /*
          * see <code>JwtCollectionBuilder.buildRegistrationJwtCollection()</code>
          */

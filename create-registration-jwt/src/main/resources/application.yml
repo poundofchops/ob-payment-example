@@ -6,7 +6,6 @@ logging:
     org.hibernate: DEBUG
     org.jt: INFO
 
-
 client:
   id: oeQyoDP5ewjAoL6SfuKG2K
   name: Registration v31 test

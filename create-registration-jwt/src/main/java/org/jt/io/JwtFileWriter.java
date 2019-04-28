@@ -48,7 +48,6 @@ public class JwtFileWriter {
         this.registrationJwtContents = registrationJwtContents;
     }
 
-
     public void writeFile() throws IllegalArgumentException{
         if ((targetName == null || targetName.isEmpty()) || (registrationJwtContents == null || registrationJwtContents.isEmpty())){
             logger.error(String.format("Unable to wtite JWT file as mandatory parameters missing target: {%s} jwtContents: {%s}",

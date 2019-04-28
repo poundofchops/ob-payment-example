@@ -38,7 +38,6 @@ public class JwtCollectionBuilder {
         } catch (Exception e) {
             logger.error(String.format("Unable to build registration JWT for target {s}", targetName), e);
         }
-
     }
 
 }

@@ -31,7 +31,6 @@ public class SigningKeyReader {
         this.generateOptionsConfiguration = generateOptionsConfiguration;
     }
 
-
     private String getKeyFileName(){
         return clientConfiguration.getId()+"_signing.key";
     }
