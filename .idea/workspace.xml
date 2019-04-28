@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80bd7711-7eea-4761-9d35-f6815b4cd2a3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/create-registration-jwt/src/main/resources/keys/key-mapping" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -19,13 +20,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/jwt/RegistrationJwtBuilder.java">
+        <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="101" column="58" selection-start-line="101" selection-start-column="58" selection-end-line="101" selection-end-column="58" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="298">
+              <caret line="25" column="42" lean-forward="true" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/readme.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="223" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="223" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/oeQyoDP5ewjAoL6SfuKG2K.ssa">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/keys/key-mapping">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="9" selection-start-column="9" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -33,45 +58,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="150">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/create-registration-jwt/create-registration-jwt.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-74" />
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/keys/oeQyoDP5ewjAoL6SfuKG2K_signing.csr">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/config/ClientConfiguration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1368#1369#0" expanded="true" />
-                <element signature="e#1396#1397#0" expanded="true" />
-                <element signature="e#1444#1445#0" expanded="true" />
-                <element signature="e#1478#1479#0" expanded="true" />
-                <element signature="e#1964#1965#0" expanded="true" />
-                <element signature="e#2018#2019#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="240">
+              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -79,8 +79,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/keys/oeQyoDP5ewjAoL6SfuKG2K_signing.key">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="405">
+              <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -88,8 +88,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/keys/oeQyoDP5ewjAoL6SfuKG2K_transport.csr">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="240">
+              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -97,36 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/keys/oeQyoDP5ewjAoL6SfuKG2K_transport.key">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="21" column="64" lean-forward="true" selection-start-line="21" selection-start-column="64" selection-end-line="21" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/jwt/JwtCollectionBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="42" selection-start-line="42" selection-end-line="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/io/SsaFileReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#668#669#0" expanded="true" />
-                <element signature="e#704#705#0" expanded="true" />
-                <element signature="e#1064#1065#0" expanded="true" />
-                <element signature="e#1092#1093#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="360">
+              <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -159,7 +131,6 @@
         <option value="$PROJECT_DIR$/generate-ssa/src/main/java/org/jt/config/ClientDefinition.java" />
         <option value="$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/jwt/JwtPrinter.java" />
         <option value="$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/jwt/JwtBuilder.java" />
-        <option value="$PROJECT_DIR$/create-registration-jwt/src/main/resources/oeQyoDP5ewjAoL6SfuKG2K.ssa" />
         <option value="$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/config/SaveOptionsConfig.java" />
         <option value="$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/config/CreateRegistrationJwtConfiguration.java" />
         <option value="$PROJECT_DIR$/create-registration-jwt/src/main/resources/application.yaml" />
@@ -168,13 +139,10 @@
         <option value="$PROJECT_DIR$/create-registration-jwt/pom.xml" />
         <option value="$PROJECT_DIR$/create-registration-jwt/src/test/resources/application.yml" />
         <option value="$PROJECT_DIR$/create-registration-jwt/src/test/java/org/jt/config/SaveOptionsConfigurationTest.java" />
-        <option value="$PROJECT_DIR$/create-registration-jwt/src/main/resources/other.jwt" />
         <option value="$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/config/SaveOptionsConfiguration.java" />
-        <option value="$PROJECT_DIR$/create-registration-jwt/src/main/resources/tomv.jwt" />
         <option value="$PROJECT_DIR$/create-registration-jwt/src/test/java/org/jt/config/ClientConfigurationTest.java" />
         <option value="$PROJECT_DIR$/create-registration-jwt/src/test/resources/application-test.yml" />
         <option value="$PROJECT_DIR$/create-registration-jwt/src/test/java/org/jt/config/RegistrationJwtConfigurationTest.java" />
-        <option value="$PROJECT_DIR$/create-registration-jwt/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/create-registration-jwt/src/test/java/org/jt/config/GenerateOptionsConfigurationTest.java" />
         <option value="$PROJECT_DIR$/create-registration-jwt/src/test/java/org/jt/io/JwtFileWriterTest.java" />
         <option value="$PROJECT_DIR$/create-registration-jwt/src/test/resources/corrupt_signing.key" />
@@ -183,6 +151,7 @@
         <option value="$PROJECT_DIR$/create-registration-jwt/src/test/resources/corrupt.ssa" />
         <option value="$PROJECT_DIR$/create-registration-jwt/src/test/java/org/jt/io/SsaFileReaderTest.java" />
         <option value="$PROJECT_DIR$/create-registration-jwt/src/test/java/org/jt/jwt/RegistrationJwtBuilderTest.java" />
+        <option value="$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/config/ClientConfiguration.java" />
         <option value="$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/config/GenerateOptionsConfiguration.java" />
         <option value="$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/config/RegistrationJwtConfiguration.java" />
         <option value="$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/io/JwtFileWriter.java" />
@@ -195,7 +164,11 @@
         <option value="$PROJECT_DIR$/create-registration-jwt/src/main/resources/keys/oeQyoDP5ewjAoL6SfuKG2K_signing.key" />
         <option value="$PROJECT_DIR$/create-registration-jwt/src/main/resources/keys/oeQyoDP5ewjAoL6SfuKG2K_transport.csr" />
         <option value="$PROJECT_DIR$/create-registration-jwt/src/main/resources/keys/oeQyoDP5ewjAoL6SfuKG2K_transport.key" />
-        <option value="$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/config/ClientConfiguration.java" />
+        <option value="$PROJECT_DIR$/create-registration-jwt/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/create-registration-jwt/src/main/resources/oeQyoDP5ewjAoL6SfuKG2K.ssa" />
+        <option value="$PROJECT_DIR$/create-registration-jwt/src/main/resources/other.jwt" />
+        <option value="$PROJECT_DIR$/create-registration-jwt/src/main/resources/tomv.jwt" />
+        <option value="$PROJECT_DIR$/create-registration-jwt/src/main/resources/keys/key-mapping" />
       </list>
     </option>
   </component>
@@ -535,7 +508,7 @@
       <workItem from="1555525837182" duration="10826000" />
       <workItem from="1555928828967" duration="15098000" />
       <workItem from="1556125938468" duration="18784000" />
-      <workItem from="1556291738737" duration="10329000" />
+      <workItem from="1556291738737" duration="11498000" />
     </task>
     <servers />
   </component>
@@ -572,12 +545,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77852000" />
+    <option name="totallyTimeSpent" value="79021000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28683835" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28683835" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -586,13 +559,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32765958" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32624114" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32624114" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39716312" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32624114" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32624114" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.40567377" />
@@ -617,7 +590,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/Application.java</url>
-          <line>14</line>
+          <line>15</line>
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
@@ -641,13 +614,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/io/SsaFileReader.java</url>
-          <line>48</line>
+          <line>47</line>
           <properties />
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/io/JwtFileWriter.java</url>
-          <line>89</line>
+          <line>88</line>
           <properties />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
@@ -720,27 +693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/other.jwt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-end-column="5034" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/oeQyoDP5ewjAoL6SfuKG2K.ssa">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="2683" selection-end-column="2754" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/tomv.jwt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="41" column="1" lean-forward="true" selection-end-line="41" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -871,105 +823,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="22" column="42" selection-start-line="10" selection-start-column="2" selection-end-line="22" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/test/java/org/jt/jwt/RegistrationJwtBuilderTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="332">
           <caret line="55" column="48" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/config/GenerateOptionsConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/config/RegistrationJwtConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="14" column="101" selection-start-line="14" selection-start-column="101" selection-end-line="14" selection-end-column="101" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/io/JwtFileWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3165#3166#0" expanded="true" />
-            <element signature="e#3241#3242#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/io/SigningKeyReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="21" column="70" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1121#1122#0" expanded="true" />
-            <element signature="e#1186#1187#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/io/SsaFileReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#668#669#0" expanded="true" />
-            <element signature="e#704#705#0" expanded="true" />
-            <element signature="e#1064#1065#0" expanded="true" />
-            <element signature="e#1092#1093#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/jwt/JwtCollectionBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/jwt/RegistrationJwtBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="101" column="58" selection-start-line="101" selection-start-column="58" selection-end-line="101" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -981,38 +838,10 @@
         <state relative-caret-position="-74" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/keys/oeQyoDP5ewjAoL6SfuKG2K_signing.csr">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/keys/oeQyoDP5ewjAoL6SfuKG2K_signing.key">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/keys/oeQyoDP5ewjAoL6SfuKG2K_transport.csr">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/keys/oeQyoDP5ewjAoL6SfuKG2K_transport.key">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="21" column="64" lean-forward="true" selection-start-line="21" selection-start-column="64" selection-end-line="21" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/config/ClientConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="180">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1368#1369#0" expanded="true" />
@@ -1022,6 +851,156 @@
             <element signature="e#1964#1965#0" expanded="true" />
             <element signature="e#2018#2019#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/config/GenerateOptionsConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/config/RegistrationJwtConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/io/JwtFileWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/io/SigningKeyReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/io/SsaFileReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/jwt/JwtCollectionBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/jwt/RegistrationJwtBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="167" column="5" selection-start-line="167" selection-start-column="5" selection-end-line="167" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/java/org/jt/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/keys/oeQyoDP5ewjAoL6SfuKG2K_signing.csr">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/keys/oeQyoDP5ewjAoL6SfuKG2K_signing.key">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/keys/oeQyoDP5ewjAoL6SfuKG2K_transport.csr">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/keys/oeQyoDP5ewjAoL6SfuKG2K_transport.key">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/oeQyoDP5ewjAoL6SfuKG2K.ssa">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/other.jwt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/tomv.jwt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/keys/key-mapping">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" selection-start-column="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="25" column="42" lean-forward="true" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create-registration-jwt/src/main/resources/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="223" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="223" />
         </state>
       </provider>
     </entry>
