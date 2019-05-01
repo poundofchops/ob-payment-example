@@ -1,1 +1,8 @@
+org/jt/io/SsaFileReaderTest.class
+org/jt/jwt/RegistrationJwtBuilderTest.class
+org/jt/config/ClientConfigurationTest.class
+org/jt/config/RegistrationJwtConfigurationTest.class
 org/jt/io/JwtFileWriterTest.class
+org/jt/jwt/JwtCollectionBuilderTest.class
+org/jt/io/SigningKeyReaderTest.class
+org/jt/config/GenerateOptionsConfigurationTest.class

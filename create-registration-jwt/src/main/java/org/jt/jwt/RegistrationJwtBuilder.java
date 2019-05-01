@@ -143,12 +143,9 @@ public class RegistrationJwtBuilder {
 //        }
 
         return new JWTClaimsSet.Builder()
-                    .claim("ssa", ssaFileReader.readFile())
+                    .claim("software_statement", ssaFileReader.readFile())
                     .audience(jwtConfiguration.getAudience().get(target))
                     .claim("request_object_signing_alg", jwtConfiguration.getRequestObjectSigningAlg())
-                    .claim("request_object_encryption_enc", jwtConfiguration.getRequestObjectEncryptionEnc())
-                    .claim("request_object_encryption_alg", jwtConfiguration.getRequestObjectEncryptionAlg())
-                    .claim("response_types", jwtConfiguration.getResponseTypes())
                     .claim("id_token_signed_response_alg", jwtConfiguration.getIdTokenSignedResponseAlg())
                     .claim("token_endpoint_auth_method", jwtConfiguration.getTokenEndpointAuthMethod())
                     .claim("token_endpoint_signing_alg", jwtConfiguration.getTokenEndpointSigningAlg())
@@ -161,7 +158,7 @@ public class RegistrationJwtBuilder {
                     .claim("application_type", clientConfiguration.getApplicationType())
 
                     .issueTime(new Date(new Date().getTime()))
-                    .expirationTime(new Date(new Date().getTime() + 60 * 1000))
+                    .expirationTime(new Date(new Date().getTime() + (60 * 60 * 1000)))
                     .claim("jti", UUID.randomUUID().toString())
 
                     .build();

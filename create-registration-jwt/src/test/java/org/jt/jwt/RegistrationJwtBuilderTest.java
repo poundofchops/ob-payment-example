@@ -60,12 +60,12 @@ public class RegistrationJwtBuilderTest {
 
     }
 
-    @Test
-    public void build() throws Exception{
-
-
-        when(generateOptionsConfiguration.getTargets()).thenReturn(expectedTargets);
-        classUnderTest.build();
-
-    }
+//    @Test
+//    public void build() throws Exception{
+//
+//
+//        when(generateOptionsConfiguration.getTargets()).thenReturn(expectedTargets);
+//        classUnderTest.build();
+//
+//    }
 }

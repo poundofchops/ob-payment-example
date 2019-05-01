@@ -17,15 +17,15 @@ import java.util.stream.Stream;
 public class SsaFileReader {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    private ClientConfiguration config;
+    private ClientConfiguration clientConfiguration;
     private GenerateOptionsConfiguration generateOptionsConfiguration;
 
     //contents of ssa file
     private String ssaText;
 
     @Autowired
-    public void setConfig(ClientConfiguration config) {
-        this.config = config;
+    public void setClientConfiguration(ClientConfiguration clientConfiguration) {
+        this.clientConfiguration = clientConfiguration;
     }
 
     @Autowired
@@ -35,7 +35,7 @@ public class SsaFileReader {
 
     public String readFile() throws Exception{
 
-        Path path = Paths.get(generateOptionsConfiguration.getOutputDirectory(), getSsaFileName());
+        Path path = Paths.get(generateOptionsConfiguration.getOutputDirectory(), clientConfiguration.getId(), getSsaFileName());
 
         Stream<String> lines = Files.lines(path);
         ssaText= lines.collect(Collectors.joining());
@@ -49,6 +49,6 @@ public class SsaFileReader {
     }
 
     private String getSsaFileName(){
-        return config.getId()+".ssa";
+        return clientConfiguration.getId()+".ssa";
     }
 }

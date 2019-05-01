@@ -50,7 +50,7 @@ public class JwtFileWriter {
 
     public void writeFile() throws IllegalArgumentException{
         if ((targetName == null || targetName.isEmpty()) || (registrationJwtContents == null || registrationJwtContents.isEmpty())){
-            logger.error(String.format("Unable to wtite JWT file as mandatory parameters missing target: {%s} jwtContents: {%s}",
+            logger.error(String.format("Unable to write JWT file as mandatory parameters missing - target: {%s} jwtContents: {%s}",
                     targetName, registrationJwtContents));
             throw new IllegalArgumentException();
         }
@@ -66,7 +66,7 @@ public class JwtFileWriter {
 
     private void writeNewFileForTarget() throws Exception {
         //Get the file reference
-        Path path = Paths.get(generateOptionsConfiguration.getOutputDirectory(), getTargetFileName());
+        Path path = Paths.get(generateOptionsConfiguration.getOutputDirectory(), clientConfiguration.getId(), getTargetFileName());
         path.toFile().createNewFile();
 
         //Use try-with-resource to get auto-closeable writer instance
@@ -77,7 +77,7 @@ public class JwtFileWriter {
 
     private void removeOldFileForTarget() {
         //Get the file reference
-        File oldFile = Paths.get(generateOptionsConfiguration.getOutputDirectory(), getTargetFileName()).toFile();
+        File oldFile = Paths.get(generateOptionsConfiguration.getOutputDirectory(), clientConfiguration.getId(), getTargetFileName()).toFile();
 
         if(oldFile.exists()){
             oldFile.delete();

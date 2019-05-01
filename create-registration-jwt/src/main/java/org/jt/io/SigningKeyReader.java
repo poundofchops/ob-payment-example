@@ -36,7 +36,7 @@ public class SigningKeyReader {
     }
 
     public PrivateKey getSigningKey() throws Exception{
-        String privateKeyContent = new String(Files.readAllBytes(Paths.get(generateOptionsConfiguration.getOutputDirectory(), getKeyFileName())));
+        String privateKeyContent = new String(Files.readAllBytes(Paths.get(generateOptionsConfiguration.getOutputDirectory(), clientConfiguration.getId(), getKeyFileName())));
 
         privateKeyContent = privateKeyContent.replaceAll("\\n", "").replace("-----BEGIN PRIVATE KEY-----", "").replace("-----END PRIVATE KEY-----", "");
 

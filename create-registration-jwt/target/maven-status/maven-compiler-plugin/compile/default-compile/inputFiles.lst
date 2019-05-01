@@ -1,6 +1,6 @@
+/Users/james/dev/ideaProjects/dynamic-reg/create-registration-jwt/src/main/java/org/jt/config/GenerateOptionsConfiguration.java
 /Users/james/dev/ideaProjects/dynamic-reg/create-registration-jwt/src/main/java/org/jt/jwt/JwtCollectionBuilder.java
 /Users/james/dev/ideaProjects/dynamic-reg/create-registration-jwt/src/main/java/org/jt/Application.java
-/Users/james/dev/ideaProjects/dynamic-reg/create-registration-jwt/src/main/java/org/jt/config/SaveOptionsConfiguration.java
 /Users/james/dev/ideaProjects/dynamic-reg/create-registration-jwt/src/main/java/org/jt/io/SigningKeyReader.java
 /Users/james/dev/ideaProjects/dynamic-reg/create-registration-jwt/src/main/java/org/jt/io/JwtFileWriter.java
 /Users/james/dev/ideaProjects/dynamic-reg/create-registration-jwt/src/main/java/org/jt/io/SsaFileReader.java

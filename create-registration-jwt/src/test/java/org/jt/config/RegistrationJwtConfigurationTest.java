@@ -30,7 +30,7 @@ public class RegistrationJwtConfigurationTest {
     @Test
     public void getAudience() {
         Map<String, String> expected = new HashMap<String, String> ();
-        expected.put("nwb", "https://test.natwest.register");
+        expected.put("oeQyoDP5ewjAoL6SfuKG2K", "https://test.natwest.register");
         expected.put("ubn", "https://test.ubn.register");
         expected.put("rbs", "https://test.rbs.register");
 

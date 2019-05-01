@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/create-registration-jwt/create-registration-jwt.iml" filepath="$PROJECT_DIR$/create-registration-jwt/create-registration-jwt.iml" />
       <module fileurl="file://$PROJECT_DIR$/dynamic-reg.iml" filepath="$PROJECT_DIR$/dynamic-reg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rest-client/rest-client.iml" filepath="$PROJECT_DIR$/rest-client/rest-client.iml" />
     </modules>
   </component>
 </project>

@@ -5,6 +5,7 @@
       <list>
         <option value="$PROJECT_DIR$/generate-ssa/pom.xml" />
         <option value="$PROJECT_DIR$/create-registration-jwt/pom.xml" />
+        <option value="$PROJECT_DIR$/rest-client/pom.xml" />
       </list>
     </option>
   </component>

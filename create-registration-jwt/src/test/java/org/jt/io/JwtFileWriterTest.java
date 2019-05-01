@@ -30,7 +30,7 @@ import static org.mockito.Mockito.when;
 public class JwtFileWriterTest {
     private static final Logger logger = LoggerFactory.getLogger(JwtFileWriterTest.class);
 
-    private static final String TARGET_NAME = "nwb";
+    private static final String TARGET_NAME = "oeQyoDP5ewjAoL6SfuKG2K";
     private static final String TARGET_OUTPUT_DIRECTORY = "/Users/james/dev/ideaProjects/dynamic-reg/create-registration-jwt/src/test/resources";
     private static final String VALID_CONTENTS_RAW = "test.file.contents";
     private static final String TEST_ID = "87389edjxolsm";

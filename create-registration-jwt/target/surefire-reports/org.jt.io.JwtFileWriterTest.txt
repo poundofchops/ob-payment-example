@@ -1,7 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.jt.io.JwtFileWriterTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.066 s <<< FAILURE! - in org.jt.io.JwtFileWriterTest
-initializationError(org.jt.io.JwtFileWriterTest)  Time elapsed: 0.006 s  <<< ERROR!
-java.lang.Exception: Method beforeClass() should be static
-
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.178 s - in org.jt.io.JwtFileWriterTest

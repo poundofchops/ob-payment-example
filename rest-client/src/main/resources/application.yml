@@ -1,0 +1,21 @@
+spring:
+logging:
+  level:
+    org.springframework.web: DEBUG
+    guru.springframework.controllers: DEBUG
+    org.hibernate: DEBUG
+    org.jt: INFO
+
+client:
+  id: 8CPm73WMWNHzlRYCIiPKrA
+
+target:
+  token_endpoint_url: https://ob.ulster.useinfinite.io/token
+tls:
+  alias:
+  keystore:
+    location:
+    password:
+  trustore:
+    location:
+    password:

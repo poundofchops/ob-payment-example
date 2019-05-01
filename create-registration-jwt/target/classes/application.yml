@@ -6,27 +6,26 @@ logging:
     org.hibernate: DEBUG
     org.jt: INFO
 
-
 client:
-  id: oeQyoDP5ewjAoL6SfuKG2K
-  name: Registration v31 test
-  description: test SSA/client for PSD2 onboarding tests
+  id: 8CPm73WMWNHzlRYCIiPKrA
+  name: DES test client
+  description: test TPP client for DES tests
   application_type: web
   subject_type: public
   scope:
     - AISP
     - PISP
   redirect_uris:
-    - https://shatnersbassoon.net/openbanking/cb
-    - https://shatnersbassoon.net/openbanking/cb2
-  transport_kid: YvJnFzgXAtFwIhGUZN_12w1hDBA
-  signing_kid: 9xpKIuc1GDgYfAm1uo7o8DyaoEQ
+    - https://ulsterbank-tpp.ie/openbanking/cb
+  transport_kid: 6TuAkAmkUzGF15LzVH1qEn3341o
+  signing_kid: j1eN4fJOrbxS8mB-4RGz2z_Dg0U
 
 registration-jwt:
   audience:
     nwb: https://ob.natwest.useinfinite.io
     rbs: https://ob.rbs.useinfinite.io
     ubn: https://ob.ulsterni.useinfinite.io
+    ubr: https://ob.ulster.useinfinite.io
   request_object_encryption_enc: A128CBC-HS256
   request_object_encryption_alg: RSA-OAEP-256
   request_object_signing_alg: RS256
@@ -48,5 +47,4 @@ generate-options:
     - nwb
     - rbs
     - ubn
-
-
+    - ubr

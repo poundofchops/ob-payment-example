@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: org.jt.jwt.JwtCollectionBuilderTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.04 s <<< FAILURE! - in org.jt.jwt.JwtCollectionBuilderTest
+buildRegistrationJwtCollection(org.jt.jwt.JwtCollectionBuilderTest)  Time elapsed: 0.005 s  <<< FAILURE!
+java.lang.AssertionError: not implemented
+	at org.jt.jwt.JwtCollectionBuilderTest.buildRegistrationJwtCollection(JwtCollectionBuilderTest.java:13)
+
