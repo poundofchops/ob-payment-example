@@ -1,0 +1,22 @@
+spring:
+#logging:
+#  level:
+#    org.springframework.web: DEBUG
+#    guru.springframework.controllers: DEBUG
+#    org.hibernate: DEBUG
+#    org.jt: INFO
+
+client:
+  id: 8CPm73WMWNHzlRYCIiPKrA
+
+target:
+  wellknown_endpoint_url: https://api.ulster.useinfinite.io/.well-known/openid-configuration
+  financial_id: 0015800001ZEZ1iAAH
+tls:
+  alias:
+  keystore:
+    location: classpath:keystore.jks
+    password: password
+  truststore:
+    location: classpath:truststore.jks
+    password: changeit
