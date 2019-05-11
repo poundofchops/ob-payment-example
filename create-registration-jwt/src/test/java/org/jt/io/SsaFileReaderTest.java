@@ -15,7 +15,7 @@ import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class SsaFileReaderTest {
-    private static final String TEST_RESOURCES_DIR = "/Users/james/dev/ideaProjects/dynamic-reg/create-registration-jwt/src/test/resources";
+    private static final String TEST_RESOURCES_DIR = "/Users/james/dev/ideaProjects/dynamic-reg/create-registration-jwt/src/test/model";
 
     @Mock
     private ClientConfiguration clientConfiguration;

@@ -42,7 +42,7 @@ registration-jwt:
     - client_credentials
 
 generate-options:
-  output_directory: /Users/james/dev/ideaProjects/dynamic-reg/create-registration-jwt/src/main/resources/keys
+  output_directory: /Users/james/dev/ideaProjects/dynamic-reg/create-registration-jwt/src/main/model/keys
   targets:
     - nwb
     - rbs

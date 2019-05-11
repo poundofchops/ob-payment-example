@@ -9,8 +9,8 @@ Generate CSR incantation openssl req -new -newkey rsa:2048 -nodes -out 8CPm73WMW
 
 redirect_uri https://ulsterbank-tpp.ie/openbanking/cb
 
-transport kid 6TuAkAmkUzGF15LzVH1qEn3341o
-signing kid j1eN4fJOrbxS8mB-4RGz2z_Dg0U
+transport keyId 6TuAkAmkUzGF15LzVH1qEn3341o
+signing keyId j1eN4fJOrbxS8mB-4RGz2z_Dg0U
 
 ++++++++++++ NATWEST TPP +++++++++++++++++
 client:
