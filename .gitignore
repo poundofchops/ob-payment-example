@@ -1,0 +1,8 @@
+.idea/misc.xml
+.DS_Store
+.idea/workspace.xml
+generate-client/README.md
+generate-client/src
+generate-client/target
+single-domestic-payment/target
+.idea
