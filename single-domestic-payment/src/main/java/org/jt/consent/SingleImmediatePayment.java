@@ -1,6 +1,7 @@
 package org.jt.consent;
 
 import org.jt.configuration.RestClientConfiguration;
+import org.jt.model.payments.OBWriteDomestic2;
 import org.jt.model.token.AccessTokenResponse;
 import org.jt.model.wellknown.WellKnownResponse;
 import org.slf4j.Logger;
@@ -16,6 +17,8 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -85,8 +88,8 @@ public class SingleImmediatePayment {
     public void applicationLaunch() throws Exception{
         logger.info(String.format("++++ Retrieving openid-configuration from %s", restClientConfiguration.getWellKnownOpenIDConfigurationUri()));
 
-        ResponseEntity<WellKnownResponse> wellKnownResponseResponseEntity = vanillaRestTemplate.getForEntity(restClientConfiguration.getWellKnownOpenIDConfigurationUri(), WellKnownResponse.class);
-        String tokenEndpointUri=wellKnownResponseResponseEntity.getBody().getTokenEndpoint();
+        ResponseEntity<WellKnownResponse> wellKnownResponse = vanillaRestTemplate.getForEntity(restClientConfiguration.getWellKnownOpenIDConfigurationUri(), WellKnownResponse.class);
+        String tokenEndpointUri=wellKnownResponse.getBody().getTokenEndpoint();
         logger.info(String.format("++++ .well-known config retrieved, token URI identified as %s", tokenEndpointUri));
 
         ResponseEntity<AccessTokenResponse> accessTokenResponse = sslRestTemplate.postForEntity(tokenEndpointUri, createAccessTokenRequestObject(), AccessTokenResponse.class);
@@ -94,10 +97,40 @@ public class SingleImmediatePayment {
         String accessToken = accessTokenResponse.getBody().getAccessToken();
         logger.info("+++ Access Token Response -> "+accessToken);
 
-        ResponseEntity<String> paymentConsentResponse = sslRestTemplate.postForEntity(PAYMENTS_CONSENT_URI, createPaymentConsentObject(accessToken), String.class);
+        HttpEntity<String> paymentConsentRequest = createPaymentConsentObject(accessToken);
+
+        ResponseEntity<OBWriteDomestic2> paymentConsentResponse = sslRestTemplate.postForEntity(PAYMENTS_CONSENT_URI, paymentConsentRequest, OBWriteDomestic2.class);
         logger.info("+++ Payment Consent Response -> "+paymentConsentResponse.getBody());
 
+        logger.info("++++ now authorise the request "+generateAuthoriseUrl(wellKnownResponse.getBody(), paymentConsentRequest, paymentConsentResponse.getBody()));
 
+        waitForAuthorisation();
+
+
+    }
+
+    private void waitForAuthorisation() {
+
+
+    }
+
+    private String generateAuthoriseUrl(WellKnownResponse wellKnownResponse, HttpEntity<String> paymentConsentRequest, OBWriteDomestic2 paymentConsentResponse) throws UnsupportedEncodingException {
+
+        StringBuilder authUrlBuilder = new StringBuilder();
+
+        authUrlBuilder.append(wellKnownResponse.getAuthorizationEndpoint());
+        authUrlBuilder.append("?client_id=");
+        authUrlBuilder.append(restClientConfiguration.getClientId());
+        authUrlBuilder.append("&response_type=code%20id_token");
+        authUrlBuilder.append("&scope=openid%20payments");
+        authUrlBuilder.append("&redirect_uri=");
+        authUrlBuilder.append(URLEncoder.encode(restClientConfiguration.getRedirectUri(), "UTF-8"));
+        //todo - generate meaningful state
+        authUrlBuilder.append("&state=ABC");
+        authUrlBuilder.append("&request=");
+        authUrlBuilder.append(paymentConsentResponse.getData().getConsentId());
+
+        return authUrlBuilder.toString();
     }
 
     public HttpEntity<MultiValueMap<String, String>> createAccessTokenRequestObject(){

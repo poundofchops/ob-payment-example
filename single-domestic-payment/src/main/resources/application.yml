@@ -8,6 +8,7 @@ spring:
 
 client:
   id: 8CPm73WMWNHzlRYCIiPKrA
+  redirecturi: http://localhost:8080/callback
 
 target:
   wellknown_endpoint_url: https://api.ulster.useinfinite.io/.well-known/openid-configuration

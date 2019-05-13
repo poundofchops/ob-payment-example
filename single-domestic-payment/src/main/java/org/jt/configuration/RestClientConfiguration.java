@@ -26,6 +26,9 @@ public class RestClientConfiguration {
     @Value("${client.id}")
     private String clientId;
 
+    @Value("${client.redirecturi}")
+    private String redirectUri;
+
     @Value("${target.wellknown_endpoint_url}")
     private String wellKnownOpenIDConfigurationUri;
 
@@ -53,6 +56,10 @@ public class RestClientConfiguration {
 
     public String getWellKnownOpenIDConfigurationUri(){
         return wellKnownOpenIDConfigurationUri;
+    }
+
+    public String getRedirectUri() {
+        return redirectUri;
     }
 
     public String getFinancialId() {
