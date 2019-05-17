@@ -103,4 +103,19 @@ public class RestClientConfiguration {
     public RestTemplate vanillaRestTemplate(RestTemplateBuilder builder){
         return builder.build();
     }
+
+    @Override
+    public String toString() {
+        return "RestClientConfiguration{" +
+                "clientId='" + clientId + '\'' +
+                ", redirectUri='" + redirectUri + '\'' +
+                ", wellKnownOpenIDConfigurationUri='" + wellKnownOpenIDConfigurationUri + '\'' +
+                ", financialId='" + financialId + '\'' +
+                ", keyStoreLocation='" + keyStoreLocation + '\'' +
+                ", keyStorePassword='" + keyStorePassword + '\'' +
+                ", keyStoreAlias='" + keyStoreAlias + '\'' +
+                ", trustStoreLocation='" + trustStoreLocation + '\'' +
+                ", trustStorePassword='" + trustStorePassword + '\'' +
+                '}';
+    }
 }

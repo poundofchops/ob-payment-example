@@ -1,7 +1,7 @@
 spring:
 #logging:
 #  level:
-#    org.springframework.web: DEBUG
+#    org.springframework.authorise: DEBUG
 #    guru.springframework.controllers: DEBUG
 #    org.hibernate: DEBUG
 #    org.jt: INFO

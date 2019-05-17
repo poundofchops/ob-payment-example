@@ -134,7 +134,7 @@ public class RegistrationJwtBuilder {
 //              "https://infinite.io/callback"
 //              ],
 //            "subject_type": "public",
-//            "application_type": "web",
+//            "application_type": "authorise",
 //
 //            // generated
 //            "iat": 1551454782,

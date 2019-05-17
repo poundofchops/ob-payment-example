@@ -55,7 +55,7 @@ public class ClientConfigurationTest {
 
     @Test
     public void getApplicationType(){
-        assertThat(classToTest.getApplicationType(), equalTo("test-web"));
+        assertThat(classToTest.getApplicationType(), equalTo("test-authorise"));
     }
 
     @Test

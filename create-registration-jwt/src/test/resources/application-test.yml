@@ -13,14 +13,14 @@ client:
   description: test-description
   transport_kid: test-transport-kid
   signing_kid: test-signing-kid
-  application_type: test-web
+  application_type: test-authorise
   subject_type: test-public
   scope:
     - test-AISP
     - test-PISP
   redirect_uris:
-    - https://redirect-uri1
-    - https://redirect-uri2
+    - https://authorise-uri1
+    - https://authorise-uri2
 
 registration-jwt:
   audience:

@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class AccessTokenResponse {
     private String accessToken;
+    private String refreshToken;
+    private String idToken;
+
     private String tokenType;
     private long expiresIn;
     private String scope;
@@ -19,6 +22,24 @@ public class AccessTokenResponse {
 
     public String getTokenType() {
         return tokenType;
+    }
+
+    @JsonSetter("refresh_token")
+    public void setRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
+    }
+
+    public String getRefreshToken() {
+        return refreshToken;
+    }
+
+    @JsonSetter("id_token")
+    public void setIdToken(String idToken) {
+        this.idToken = idToken;
+    }
+
+    public String getIdToken() {
+        return idToken;
     }
 
     @JsonSetter("token_type")

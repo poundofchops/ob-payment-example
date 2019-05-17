@@ -1,6 +1,6 @@
 package org.jt;
 
-import org.jt.consent.SingleImmediatePayment;
+import org.jt.consent.SingleImmediatePaymentConsent;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -11,7 +11,7 @@ public class RestClientApplication {
     public static void main(String[] args) {
 
         /**
-         * See {@link SingleImmediatePayment#applicationLaunch()}
+         * See {@link SingleImmediatePaymentConsent#applicationLaunch()}
          */
         ConfigurableApplicationContext ctx = SpringApplication.run(RestClientApplication.class, args);
 

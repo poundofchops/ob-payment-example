@@ -34,7 +34,7 @@ public class RegistrationJwtBuilderTest {
 //        id: oeQyoDP5ewjAoL6SfuKG2K
 //        name: Registration v31 test
 //        description: test SSA/client for PSD2 onboarding tests
-//        application_type: web
+//        application_type: authorise
 //        subject_type: public
 //        scope:
 //        - AISP
@@ -48,7 +48,7 @@ public class RegistrationJwtBuilderTest {
         when((clientConfiguration.getId())).thenReturn("client1");
         when(clientConfiguration.getName()).thenReturn("registration builder test");
         when(clientConfiguration.getDescription()).thenReturn("");
-        when(clientConfiguration.getApplicationType()).thenReturn("web");
+        when(clientConfiguration.getApplicationType()).thenReturn("authorise");
         when(clientConfiguration.getSubjectType()).thenReturn("public");
         when(clientConfiguration.getScope()).thenReturn(new ArrayList<>());
         when(clientConfiguration.getRedirectUris()).thenReturn(new ArrayList<>());

@@ -10,7 +10,7 @@ client:
   id: 8CPm73WMWNHzlRYCIiPKrA
   name: DES test client
   description: test TPP client for DES tests
-  application_type: web
+  application_type: authorise
   subject_type: public
   scope:
     - AISP

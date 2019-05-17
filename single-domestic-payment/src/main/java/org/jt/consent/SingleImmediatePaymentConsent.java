@@ -24,9 +24,9 @@ import java.util.List;
 import java.util.UUID;
 
 @Component
-public class SingleImmediatePayment {
+public class SingleImmediatePaymentConsent {
 
-    private static Logger logger = LoggerFactory.getLogger(SingleImmediatePayment.class);
+    private static Logger logger = LoggerFactory.getLogger(SingleImmediatePaymentConsent.class);
 
     private static final String PAYMENTS_CONSENT_URI = "https://ob.ulster.useinfinite.io/open-banking/v3.1/pisp/domestic-payment-consents";
     private static final String PAYMENTS_CONSENT_BODY = "{\n" +
@@ -92,7 +92,7 @@ public class SingleImmediatePayment {
         String tokenEndpointUri=wellKnownResponse.getBody().getTokenEndpoint();
         logger.info(String.format("++++ .well-known config retrieved, token URI identified as %s", tokenEndpointUri));
 
-        ResponseEntity<AccessTokenResponse> accessTokenResponse = sslRestTemplate.postForEntity(tokenEndpointUri, createAccessTokenRequestObject(), AccessTokenResponse.class);
+        ResponseEntity<AccessTokenResponse> accessTokenResponse = sslRestTemplate.postForEntity(tokenEndpointUri, createClientCredentialsAccessTokenRequestObject(), AccessTokenResponse.class);
 
         String accessToken = accessTokenResponse.getBody().getAccessToken();
         logger.info("+++ Access Token Response -> "+accessToken);
@@ -104,15 +104,8 @@ public class SingleImmediatePayment {
 
         logger.info("++++ now authorise the request "+generateAuthoriseUrl(wellKnownResponse.getBody(), paymentConsentRequest, paymentConsentResponse.getBody()));
 
-        waitForAuthorisation();
-
-
     }
 
-    private void waitForAuthorisation() {
-
-
-    }
 
     private String generateAuthoriseUrl(WellKnownResponse wellKnownResponse, HttpEntity<String> paymentConsentRequest, OBWriteDomestic2 paymentConsentResponse) throws UnsupportedEncodingException {
 
@@ -133,7 +126,7 @@ public class SingleImmediatePayment {
         return authUrlBuilder.toString();
     }
 
-    public HttpEntity<MultiValueMap<String, String>> createAccessTokenRequestObject(){
+    public HttpEntity<MultiValueMap<String, String>> createClientCredentialsAccessTokenRequestObject(){
 
         List<MediaType> acceptTypes = new ArrayList<>();
         acceptTypes.add(MediaType.APPLICATION_JSON);
