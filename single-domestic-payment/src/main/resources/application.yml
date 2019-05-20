@@ -11,6 +11,7 @@ client:
   redirecturi: http://localhost:8080/callback
 
 target:
+  base_uri: https://api.ulster.useinfinite.io
   wellknown_endpoint_url: https://api.ulster.useinfinite.io/.well-known/openid-configuration
   financial_id: 0015800001ZEZ1iAAH
 tls:

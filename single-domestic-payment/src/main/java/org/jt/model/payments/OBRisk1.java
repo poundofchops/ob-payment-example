@@ -1,8 +1,6 @@
 package org.jt.model.payments;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
@@ -16,48 +14,11 @@ import java.util.Objects;
  */
 @ApiModel(description = "The Risk section is sent by the initiating party to the ASPSP. It is used to specify additional details for risk scoring for Payments.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-11T15:43:52.706+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-17T22:15:14.722+01:00")
 
-public class OBRisk1   {
-  /**
-   * Specifies the payment context
-   */
-  public enum PaymentContextCodeEnum {
-    BILLPAYMENT("BillPayment"),
-    
-    ECOMMERCEGOODS("EcommerceGoods"),
-    
-    ECOMMERCESERVICES("EcommerceServices"),
-    
-    OTHER("Other"),
-    
-    PARTYTOPARTY("PartyToParty");
-
-    private String value;
-
-    PaymentContextCodeEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static PaymentContextCodeEnum fromValue(String text) {
-      for (PaymentContextCodeEnum b : PaymentContextCodeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
-
+public class OBRisk1 {
   @JsonProperty("PaymentContextCode")
-  private PaymentContextCodeEnum paymentContextCode = null;
+  private OBExternalPaymentContext1Code paymentContextCode = null;
 
   @JsonProperty("MerchantCategoryCode")
   private String merchantCategoryCode = null;
@@ -68,23 +29,24 @@ public class OBRisk1   {
   @JsonProperty("DeliveryAddress")
   private OBRisk1DeliveryAddress deliveryAddress = null;
 
-  public OBRisk1 paymentContextCode(PaymentContextCodeEnum paymentContextCode) {
+  public OBRisk1 paymentContextCode(OBExternalPaymentContext1Code paymentContextCode) {
     this.paymentContextCode = paymentContextCode;
     return this;
   }
 
   /**
-   * Specifies the payment context
+   * Get paymentContextCode
    * @return paymentContextCode
   **/
-  @ApiModelProperty(value = "Specifies the payment context")
+  @ApiModelProperty(value = "")
 
+  @Valid
 
-  public PaymentContextCodeEnum getPaymentContextCode() {
+  public OBExternalPaymentContext1Code getPaymentContextCode() {
     return paymentContextCode;
   }
 
-  public void setPaymentContextCode(PaymentContextCodeEnum paymentContextCode) {
+  public void setPaymentContextCode(OBExternalPaymentContext1Code paymentContextCode) {
     this.paymentContextCode = paymentContextCode;
   }
 

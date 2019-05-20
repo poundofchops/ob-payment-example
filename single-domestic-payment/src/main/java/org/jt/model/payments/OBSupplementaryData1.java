@@ -10,9 +10,9 @@ import java.util.Objects;
  */
 @ApiModel(description = "Additional information that can not be captured in the structured fields and/or any other specific block.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-11T15:43:52.706+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-17T22:15:14.722+01:00")
 
-public class OBSupplementaryData1 {
+public class OBSupplementaryData1   {
 
   @Override
   public boolean equals(Object o) {

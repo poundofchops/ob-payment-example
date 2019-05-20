@@ -1,21 +1,22 @@
 package org.jt.model.payments;
 
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
+
 import javax.validation.Valid;
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 /**
- * OBWriteDomesticResponse3
+ * OBWriteDomesticResponse2
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-11T15:43:52.706+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-17T22:15:14.722+01:00")
 
-public class OBWriteDomesticResponse3   {
+public class OBWriteDomesticResponse2   {
   @JsonProperty("Data")
-  private OBWriteDomesticResponse3Data data = null;
+  private OBWriteDataDomesticResponse2 data = null;
 
   @JsonProperty("Links")
   private Links links = null;
@@ -23,7 +24,7 @@ public class OBWriteDomesticResponse3   {
   @JsonProperty("Meta")
   private Meta meta = null;
 
-  public OBWriteDomesticResponse3 data(OBWriteDomesticResponse3Data data) {
+  public OBWriteDomesticResponse2 data(OBWriteDataDomesticResponse2 data) {
     this.data = data;
     return this;
   }
@@ -37,15 +38,15 @@ public class OBWriteDomesticResponse3   {
 
   @Valid
 
-  public OBWriteDomesticResponse3Data getData() {
+  public OBWriteDataDomesticResponse2 getData() {
     return data;
   }
 
-  public void setData(OBWriteDomesticResponse3Data data) {
+  public void setData(OBWriteDataDomesticResponse2 data) {
     this.data = data;
   }
 
-  public OBWriteDomesticResponse3 links(Links links) {
+  public OBWriteDomesticResponse2 links(Links links) {
     this.links = links;
     return this;
   }
@@ -54,7 +55,8 @@ public class OBWriteDomesticResponse3   {
    * Get links
    * @return links
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 
@@ -66,7 +68,7 @@ public class OBWriteDomesticResponse3   {
     this.links = links;
   }
 
-  public OBWriteDomesticResponse3 meta(Meta meta) {
+  public OBWriteDomesticResponse2 meta(Meta meta) {
     this.meta = meta;
     return this;
   }
@@ -75,7 +77,8 @@ public class OBWriteDomesticResponse3   {
    * Get meta
    * @return meta
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
 
@@ -89,17 +92,17 @@ public class OBWriteDomesticResponse3   {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OBWriteDomesticResponse3 obWriteDomesticResponse3 = (OBWriteDomesticResponse3) o;
-    return Objects.equals(this.data, obWriteDomesticResponse3.data) &&
-        Objects.equals(this.links, obWriteDomesticResponse3.links) &&
-        Objects.equals(this.meta, obWriteDomesticResponse3.meta);
+    OBWriteDomesticResponse2 obWriteDomesticResponse2 = (OBWriteDomesticResponse2) o;
+    return Objects.equals(this.data, obWriteDomesticResponse2.data) &&
+        Objects.equals(this.links, obWriteDomesticResponse2.links) &&
+        Objects.equals(this.meta, obWriteDomesticResponse2.meta);
   }
 
   @Override
@@ -110,8 +113,8 @@ public class OBWriteDomesticResponse3   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OBWriteDomesticResponse3 {\n");
-    
+    sb.append("class OBWriteDomesticResponse2 {\n");
+
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
@@ -123,7 +126,7 @@ public class OBWriteDomesticResponse3   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

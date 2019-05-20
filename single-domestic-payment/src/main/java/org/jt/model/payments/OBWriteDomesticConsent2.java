@@ -9,19 +9,19 @@ import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 /**
- * OBWriteDomestic2
+ * OBWriteDomesticConsent2
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-17T22:15:14.722+01:00")
 
-public class OBWriteDomestic2   {
+public class OBWriteDomesticConsent2   {
   @JsonProperty("Data")
-  private OBWriteDataDomestic2 data = null;
+  private OBWriteDataDomesticConsent2 data = null;
 
   @JsonProperty("Risk")
   private OBRisk1 risk = null;
 
-  public OBWriteDomestic2 data(OBWriteDataDomestic2 data) {
+  public OBWriteDomesticConsent2 data(OBWriteDataDomesticConsent2 data) {
     this.data = data;
     return this;
   }
@@ -35,15 +35,15 @@ public class OBWriteDomestic2   {
 
   @Valid
 
-  public OBWriteDataDomestic2 getData() {
+  public OBWriteDataDomesticConsent2 getData() {
     return data;
   }
 
-  public void setData(OBWriteDataDomestic2 data) {
+  public void setData(OBWriteDataDomesticConsent2 data) {
     this.data = data;
   }
 
-  public OBWriteDomestic2 risk(OBRisk1 risk) {
+  public OBWriteDomesticConsent2 risk(OBRisk1 risk) {
     this.risk = risk;
     return this;
   }
@@ -74,9 +74,9 @@ public class OBWriteDomestic2   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OBWriteDomestic2 obWriteDomestic2 = (OBWriteDomestic2) o;
-    return Objects.equals(this.data, obWriteDomestic2.data) &&
-        Objects.equals(this.risk, obWriteDomestic2.risk);
+    OBWriteDomesticConsent2 obWriteDomesticConsent2 = (OBWriteDomesticConsent2) o;
+    return Objects.equals(this.data, obWriteDomesticConsent2.data) &&
+        Objects.equals(this.risk, obWriteDomesticConsent2.risk);
   }
 
   @Override
@@ -87,7 +87,7 @@ public class OBWriteDomestic2   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OBWriteDomestic2 {\n");
+    sb.append("class OBWriteDomesticConsent2 {\n");
 
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    risk: ").append(toIndentedString(risk)).append("\n");

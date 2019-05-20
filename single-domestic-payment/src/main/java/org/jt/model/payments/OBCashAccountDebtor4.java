@@ -10,13 +10,13 @@ import javax.validation.constraints.Size;
 import java.util.Objects;
 
 /**
- * Unambiguous identification of the account of the creditor to which a credit entry will be posted as a result of the payment transaction.
+ * Provides the details to identify the debtor account.
  */
-@ApiModel(description = "Unambiguous identification of the account of the creditor to which a credit entry will be posted as a result of the payment transaction.")
+@ApiModel(description = "Provides the details to identify the debtor account.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-11T15:43:52.706+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-17T22:15:14.722+01:00")
 
-public class OBWriteDomestic2DataInitiationCreditorAccount   {
+public class OBCashAccountDebtor4   {
   @JsonProperty("SchemeName")
   private String schemeName = null;
 
@@ -29,7 +29,7 @@ public class OBWriteDomestic2DataInitiationCreditorAccount   {
   @JsonProperty("SecondaryIdentification")
   private String secondaryIdentification = null;
 
-  public OBWriteDomestic2DataInitiationCreditorAccount schemeName(String schemeName) {
+  public OBCashAccountDebtor4 schemeName(String schemeName) {
     this.schemeName = schemeName;
     return this;
   }
@@ -41,7 +41,7 @@ public class OBWriteDomestic2DataInitiationCreditorAccount   {
   @ApiModelProperty(required = true, value = "")
   @NotNull
 
-
+@Size(min=1,max=40) 
   public String getSchemeName() {
     return schemeName;
   }
@@ -50,16 +50,16 @@ public class OBWriteDomestic2DataInitiationCreditorAccount   {
     this.schemeName = schemeName;
   }
 
-  public OBWriteDomestic2DataInitiationCreditorAccount identification(String identification) {
+  public OBCashAccountDebtor4 identification(String identification) {
     this.identification = identification;
     return this;
   }
 
   /**
-   * Get identification
+   * Identification assigned by an institution to identify an account. This identification is known by the account owner.
    * @return identification
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Identification assigned by an institution to identify an account. This identification is known by the account owner.")
   @NotNull
 
 @Size(min=1,max=256) 
@@ -71,17 +71,16 @@ public class OBWriteDomestic2DataInitiationCreditorAccount   {
     this.identification = identification;
   }
 
-  public OBWriteDomestic2DataInitiationCreditorAccount name(String name) {
+  public OBCashAccountDebtor4 name(String name) {
     this.name = name;
     return this;
   }
 
   /**
-   * The account name is the name or names of the account owner(s) represented at an account level. Note, the account name is not the product name or the nickname of the account. OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.
+   * Name of the account, as assigned by the account servicing institution. Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.
    * @return name
   **/
-  @ApiModelProperty(required = true, value = "The account name is the name or names of the account owner(s) represented at an account level. Note, the account name is not the product name or the nickname of the account. OB: ASPSPs may carry out name validation for Confirmation of Payee, but it is not mandatory.")
-  @NotNull
+  @ApiModelProperty(value = "Name of the account, as assigned by the account servicing institution. Usage: The account name is the name or names of the account owner(s) represented at an account level. The account name is not the product name or the nickname of the account.")
 
 @Size(min=1,max=70) 
   public String getName() {
@@ -92,16 +91,16 @@ public class OBWriteDomestic2DataInitiationCreditorAccount   {
     this.name = name;
   }
 
-  public OBWriteDomestic2DataInitiationCreditorAccount secondaryIdentification(String secondaryIdentification) {
+  public OBCashAccountDebtor4 secondaryIdentification(String secondaryIdentification) {
     this.secondaryIdentification = secondaryIdentification;
     return this;
   }
 
   /**
-   * Get secondaryIdentification
+   * This is secondary identification of the account, as assigned by the account servicing institution.  This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
    * @return secondaryIdentification
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "This is secondary identification of the account, as assigned by the account servicing institution.  This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).")
 
 @Size(min=1,max=34) 
   public String getSecondaryIdentification() {
@@ -121,11 +120,11 @@ public class OBWriteDomestic2DataInitiationCreditorAccount   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OBWriteDomestic2DataInitiationCreditorAccount obWriteDomestic2DataInitiationCreditorAccount = (OBWriteDomestic2DataInitiationCreditorAccount) o;
-    return Objects.equals(this.schemeName, obWriteDomestic2DataInitiationCreditorAccount.schemeName) &&
-        Objects.equals(this.identification, obWriteDomestic2DataInitiationCreditorAccount.identification) &&
-        Objects.equals(this.name, obWriteDomestic2DataInitiationCreditorAccount.name) &&
-        Objects.equals(this.secondaryIdentification, obWriteDomestic2DataInitiationCreditorAccount.secondaryIdentification);
+    OBCashAccountDebtor4 obCashAccountDebtor4 = (OBCashAccountDebtor4) o;
+    return Objects.equals(this.schemeName, obCashAccountDebtor4.schemeName) &&
+        Objects.equals(this.identification, obCashAccountDebtor4.identification) &&
+        Objects.equals(this.name, obCashAccountDebtor4.name) &&
+        Objects.equals(this.secondaryIdentification, obCashAccountDebtor4.secondaryIdentification);
   }
 
   @Override
@@ -136,7 +135,7 @@ public class OBWriteDomestic2DataInitiationCreditorAccount   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OBWriteDomestic2DataInitiationCreditorAccount {\n");
+    sb.append("class OBCashAccountDebtor4 {\n");
 
     sb.append("    schemeName: ").append(toIndentedString(schemeName)).append("\n");
     sb.append("    identification: ").append(toIndentedString(identification)).append("\n");

@@ -3,6 +3,7 @@ package org.jt.model.payments;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.model.OBAddressTypeCode;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
@@ -17,9 +18,9 @@ import java.util.Objects;
  */
 @ApiModel(description = "Information that locates and identifies a specific address, as defined by postal services.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-11T15:43:52.706+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-17T22:15:14.722+01:00")
 
-public class OBPostalAddress6 {
+public class OBPostalAddress6   {
   @JsonProperty("AddressType")
   private OBAddressTypeCode addressType = null;
 
@@ -78,10 +79,10 @@ public class OBPostalAddress6 {
   }
 
   /**
-   * Get department
+   * Identification of a division of a large organisation or building.
    * @return department
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Identification of a division of a large organisation or building.")
 
 @Size(min=1,max=70) 
   public String getDepartment() {
@@ -98,10 +99,10 @@ public class OBPostalAddress6 {
   }
 
   /**
-   * Get subDepartment
+   * Identification of a sub-division of a large organisation or building.
    * @return subDepartment
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Identification of a sub-division of a large organisation or building.")
 
 @Size(min=1,max=70) 
   public String getSubDepartment() {
@@ -118,10 +119,10 @@ public class OBPostalAddress6 {
   }
 
   /**
-   * Get streetName
+   * Name of a street or thoroughfare.
    * @return streetName
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Name of a street or thoroughfare.")
 
 @Size(min=1,max=70) 
   public String getStreetName() {
@@ -138,10 +139,10 @@ public class OBPostalAddress6 {
   }
 
   /**
-   * Get buildingNumber
+   * Number that identifies the position of a building on a street.
    * @return buildingNumber
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Number that identifies the position of a building on a street.")
 
 @Size(min=1,max=16) 
   public String getBuildingNumber() {
@@ -158,10 +159,10 @@ public class OBPostalAddress6 {
   }
 
   /**
-   * Get postCode
+   * Identifier consisting of a group of letters and/or numbers that is added to a postal address to assist the sorting of mail.
    * @return postCode
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Identifier consisting of a group of letters and/or numbers that is added to a postal address to assist the sorting of mail.")
 
 @Size(min=1,max=16) 
   public String getPostCode() {
@@ -178,10 +179,10 @@ public class OBPostalAddress6 {
   }
 
   /**
-   * Get townName
+   * Name of a built-up area, with defined boundaries, and a local government.
    * @return townName
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Name of a built-up area, with defined boundaries, and a local government.")
 
 @Size(min=1,max=35) 
   public String getTownName() {
@@ -198,10 +199,10 @@ public class OBPostalAddress6 {
   }
 
   /**
-   * Get countrySubDivision
+   * Identifies a subdivision of a country such as state, region, county.
    * @return countrySubDivision
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Identifies a subdivision of a country such as state, region, county.")
 
 @Size(min=1,max=35) 
   public String getCountrySubDivision() {
@@ -218,10 +219,10 @@ public class OBPostalAddress6 {
   }
 
   /**
-   * Get country
+   * Nation with its own government.
    * @return country
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Nation with its own government.")
 
 @Pattern(regexp="^[A-Z]{2,2}$") 
   public String getCountry() {
@@ -246,10 +247,10 @@ public class OBPostalAddress6 {
   }
 
   /**
-   * Get addressLine
+   * Information that locates and identifies a specific address, as defined by postal services, presented in free format text.
    * @return addressLine
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Information that locates and identifies a specific address, as defined by postal services, presented in free format text.")
 
 @Size(min=0,max=7) 
   public List<String> getAddressLine() {

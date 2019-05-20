@@ -18,9 +18,9 @@ import java.util.Objects;
  */
 @ApiModel(description = "Information that locates and identifies a specific address, as defined by postal services or in free format text.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-11T15:43:52.706+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-17T22:15:14.722+01:00")
 
-public class OBRisk1DeliveryAddress {
+public class OBRisk1DeliveryAddress   {
   @JsonProperty("AddressLine")
   @Valid
   private List<String> addressLine = null;
@@ -58,10 +58,10 @@ public class OBRisk1DeliveryAddress {
   }
 
   /**
-   * Get addressLine
+   * Information that locates and identifies a specific address, as defined by postal services, that is presented in free format text.
    * @return addressLine
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Information that locates and identifies a specific address, as defined by postal services, that is presented in free format text.")
 
 @Size(min=0,max=2) 
   public List<String> getAddressLine() {
@@ -78,10 +78,10 @@ public class OBRisk1DeliveryAddress {
   }
 
   /**
-   * Get streetName
+   * Name of a street or thoroughfare.
    * @return streetName
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Name of a street or thoroughfare.")
 
 @Size(min=1,max=70) 
   public String getStreetName() {
@@ -98,10 +98,10 @@ public class OBRisk1DeliveryAddress {
   }
 
   /**
-   * Get buildingNumber
+   * Number that identifies the position of a building on a street.
    * @return buildingNumber
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Number that identifies the position of a building on a street.")
 
 @Size(min=1,max=16) 
   public String getBuildingNumber() {
@@ -118,10 +118,10 @@ public class OBRisk1DeliveryAddress {
   }
 
   /**
-   * Get postCode
+   * Identifier consisting of a group of letters and/or numbers that is added to a postal address to assist the sorting of mail.
    * @return postCode
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Identifier consisting of a group of letters and/or numbers that is added to a postal address to assist the sorting of mail.")
 
 @Size(min=1,max=16) 
   public String getPostCode() {
@@ -138,10 +138,10 @@ public class OBRisk1DeliveryAddress {
   }
 
   /**
-   * Get townName
+   * Name of a built-up area, with defined boundaries, and a local government.
    * @return townName
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Name of a built-up area, with defined boundaries, and a local government.")
   @NotNull
 
 @Size(min=1,max=35) 
@@ -167,10 +167,10 @@ public class OBRisk1DeliveryAddress {
   }
 
   /**
-   * Get countrySubDivision
+   * Identifies a subdivision of a country, for instance state, region, county.
    * @return countrySubDivision
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Identifies a subdivision of a country, for instance state, region, county.")
 
 @Size(min=0,max=2) 
   public List<String> getCountrySubDivision() {

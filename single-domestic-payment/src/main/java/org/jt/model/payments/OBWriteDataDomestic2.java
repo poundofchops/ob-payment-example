@@ -10,19 +10,19 @@ import javax.validation.constraints.Size;
 import java.util.Objects;
 
 /**
- * OBWriteDomestic2Data
+ * OBWriteDataDomestic2
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-11T15:43:52.706+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-17T22:15:14.722+01:00")
 
-public class OBWriteDomestic2Data   {
+public class OBWriteDataDomestic2   {
   @JsonProperty("ConsentId")
   private String consentId = null;
 
   @JsonProperty("Initiation")
-  private OBWriteDomestic2DataInitiation initiation = null;
+  private OBDomestic2 initiation = null;
 
-  public OBWriteDomestic2Data consentId(String consentId) {
+  public OBWriteDataDomestic2 consentId(String consentId) {
     this.consentId = consentId;
     return this;
   }
@@ -43,7 +43,7 @@ public class OBWriteDomestic2Data   {
     this.consentId = consentId;
   }
 
-  public OBWriteDomestic2Data initiation(OBWriteDomestic2DataInitiation initiation) {
+  public OBWriteDataDomestic2 initiation(OBDomestic2 initiation) {
     this.initiation = initiation;
     return this;
   }
@@ -57,11 +57,11 @@ public class OBWriteDomestic2Data   {
 
   @Valid
 
-  public OBWriteDomestic2DataInitiation getInitiation() {
+  public OBDomestic2 getInitiation() {
     return initiation;
   }
 
-  public void setInitiation(OBWriteDomestic2DataInitiation initiation) {
+  public void setInitiation(OBDomestic2 initiation) {
     this.initiation = initiation;
   }
 
@@ -74,9 +74,9 @@ public class OBWriteDomestic2Data   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OBWriteDomestic2Data obWriteDomestic2Data = (OBWriteDomestic2Data) o;
-    return Objects.equals(this.consentId, obWriteDomestic2Data.consentId) &&
-        Objects.equals(this.initiation, obWriteDomestic2Data.initiation);
+    OBWriteDataDomestic2 obWriteDataDomestic2 = (OBWriteDataDomestic2) o;
+    return Objects.equals(this.consentId, obWriteDataDomestic2.consentId) &&
+        Objects.equals(this.initiation, obWriteDataDomestic2.initiation);
   }
 
   @Override
@@ -87,7 +87,7 @@ public class OBWriteDomestic2Data   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OBWriteDomestic2Data {\n");
+    sb.append("class OBWriteDataDomestic2 {\n");
 
     sb.append("    consentId: ").append(toIndentedString(consentId)).append("\n");
     sb.append("    initiation: ").append(toIndentedString(initiation)).append("\n");

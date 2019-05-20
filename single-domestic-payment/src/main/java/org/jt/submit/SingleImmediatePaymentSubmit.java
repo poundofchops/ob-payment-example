@@ -1,7 +1,9 @@
 package org.jt.submit;
 
 import org.jt.configuration.RestClientConfiguration;
+import org.jt.model.payments.OBWriteDataDomestic2;
 import org.jt.model.payments.OBWriteDomestic2;
+import org.jt.model.payments.OBWriteDomesticResponse2;
 import org.jt.model.token.AccessTokenResponse;
 import org.jt.model.wellknown.WellKnownResponse;
 import org.slf4j.Logger;
@@ -24,34 +26,6 @@ public class SingleImmediatePaymentSubmit {
     private static final Logger logger = LoggerFactory.getLogger(SingleImmediatePaymentSubmit.class);
 
     private static final String PAYMENTS_SUBMIT_URI = "https://ob.ulster.useinfinite.io/open-banking/v3.1/pisp/domestic-payments";
-    private static final String PAYMENTS_SUBMIT_BODY1 = "{\n" +
-            "  \"Data\": {\n" +
-            "    \"ConsentId\": \"";
-
-    private static final String PAYMENTS_SUBMIT_BODY2 = "\",\n" +
-            "    \"Initiation\": {\n" +
-            "      \"InstructionIdentification\": \"instr-identification\",\n" +
-            "      \"EndToEndIdentification\": \"e2e-identification\",\n" +
-            "      \"InstructedAmount\": {\n" +
-            "        \"Amount\": \"50.00\",\n" +
-            "        \"Currency\": \"EUR\"\n" +
-            "      },\n" +
-            "      \"CreditorAccount\": {\n" +
-            "        \"SchemeName\": \"IBAN\",\n" +
-            "        \"Identification\": \"BE56456394728288\",\n" +
-            "        \"Name\": \"ACME DIY\",\n" +
-            "        \"SecondaryIdentification\": \"secondary-identif\"\n" +
-            "      },\n" +
-            "      \"RemittanceInformation\": {\n" +
-            "        \"Unstructured\": \"Tools\",\n" +
-            "        \"Reference\": \"Tools\"\n" +
-            "      }\n" +
-            "    }\n" +
-            "  },\n" +
-            "  \"Risk\": {\n" +
-            "    \"PaymentContextCode\": \"EcommerceGoods\"\n" +
-            "  }\n" +
-            "}";
 
     // Rest Client Configuration
     private RestClientConfiguration restClientConfiguration;
@@ -94,13 +68,13 @@ public class SingleImmediatePaymentSubmit {
         String accessToken = accessTokenResponse.getBody().getAccessToken();
         logger.info("+++ Access Token Response -> "+accessToken);
 
-        HttpEntity<String> paymentConsentRequest = createPaymentSubmitObject(accessToken, submitRequest);
+        HttpEntity<OBWriteDomestic2> paymentSubmitRequest = createPaymentSubmitRequest(accessToken, submitRequest);
 
-        ResponseEntity<OBWriteDomestic2> paymentConsentResponse = sslRestTemplate.postForEntity(PAYMENTS_SUBMIT_URI, paymentConsentRequest, OBWriteDomestic2.class);
+        ResponseEntity<OBWriteDomesticResponse2> paymentConsentResponse = sslRestTemplate.postForEntity(PAYMENTS_SUBMIT_URI, paymentSubmitRequest, OBWriteDomesticResponse2.class);
         logger.info("+++ Payment Consent Response -> "+paymentConsentResponse.getBody());
     }
 
-    private HttpEntity<String> createPaymentSubmitObject(String accessToken, SubmitRequest submitRequest) {
+    private HttpEntity<OBWriteDomestic2> createPaymentSubmitRequest(String accessToken, SubmitRequest submitRequest) {
 
         List<MediaType> acceptTypes = new ArrayList<>();
         acceptTypes.add(MediaType.APPLICATION_JSON);
@@ -114,12 +88,24 @@ public class SingleImmediatePaymentSubmit {
         headers.add("x-jws-signature", "ignored");
         headers.add("x-idempotency-key", "ignored");
 
-        String updatedPaymentSubmitBody = PAYMENTS_SUBMIT_BODY1+submitRequest.getConsentId()+PAYMENTS_SUBMIT_BODY2;
+        OBWriteDomestic2 paymentSubmitBody = createPaymentSubmitBody();
 
-        HttpEntity<String> request = new HttpEntity<>(updatedPaymentSubmitBody, headers);
+        HttpEntity<OBWriteDomestic2> request = new HttpEntity<OBWriteDomestic2>(paymentSubmitBody, headers);
 
         return request;
 
+    }
+
+    private OBWriteDomestic2 createPaymentSubmitBody() {
+
+        OBWriteDomestic2 payment = new OBWriteDomestic2();
+        payment
+                .data(new OBWriteDataDomestic2()
+                        .)
+                .risk()
+
+        //todo - fill me in
+        return payment;
     }
 
     private HttpEntity<MultiValueMap<String, String>> createAuthCodeAccessTokenRequestObject(SubmitRequest submitRequest) {

@@ -1,7 +1,7 @@
 package org.jt.consent;
 
 import org.jt.configuration.RestClientConfiguration;
-import org.jt.model.payments.OBWriteDomestic2;
+import org.jt.model.payments.*;
 import org.jt.model.token.AccessTokenResponse;
 import org.jt.model.wellknown.WellKnownResponse;
 import org.slf4j.Logger;
@@ -29,35 +29,6 @@ public class SingleImmediatePaymentConsent {
     private static Logger logger = LoggerFactory.getLogger(SingleImmediatePaymentConsent.class);
 
     private static final String PAYMENTS_CONSENT_URI = "https://ob.ulster.useinfinite.io/open-banking/v3.1/pisp/domestic-payment-consents";
-    private static final String PAYMENTS_CONSENT_BODY = "{\n" +
-            "  \"Data\": {\n" +
-            "    \"Initiation\": {\n" +
-            "      \"InstructionIdentification\": \"instr-identification\",\n" +
-            "      \"EndToEndIdentification\": \"e2e-identification\",\n" +
-            "      \"InstructedAmount\": {\n" +
-            "        \"Amount\": \"50.00\",\n" +
-            "        \"Currency\": \"EUR\"\n" +
-            "      },\n" +
-            "      \"DebtorAccount\": null,\n" +
-            "      \"CreditorAccount\": {\n" +
-            "        \"SchemeName\": \"IBAN\",\n" +
-            "        \"Identification\": \"BE56456394728288\",\n" +
-            "        \"Name\": \"ACME DIY\",\n" +
-            "        \"SecondaryIdentification\": \"secondary-identif\"\n" +
-            "      },\n" +
-            "      \"RemittanceInformation\": {\n" +
-            "        \"Unstructured\": \"Tools\",\n" +
-            "        \"Reference\": \"Tools\"\n" +
-            "      }\n" +
-            "    }\n" +
-            "  },\n" +
-            "  \"Risk\": {\n" +
-            "    \"PaymentContextCode\": \"EcommerceGoods\",\n" +
-            "    \"MerchantCategoryCode\": null,\n" +
-            "    \"MerchantCustomerIdentification\": null,\n" +
-            "    \"DeliveryAddress\": null\n" +
-            "  }\n" +
-            "}\n";
 
     // Rest Client Configuration
     private RestClientConfiguration restClientConfiguration;
@@ -83,7 +54,6 @@ public class SingleImmediatePaymentConsent {
         this.vanillaRestTemplate = vanillaRestTemplate;
     }
 
-
     @PostConstruct
     public void applicationLaunch() throws Exception{
         logger.info(String.format("++++ Retrieving openid-configuration from %s", restClientConfiguration.getWellKnownOpenIDConfigurationUri()));
@@ -97,9 +67,9 @@ public class SingleImmediatePaymentConsent {
         String accessToken = accessTokenResponse.getBody().getAccessToken();
         logger.info("+++ Access Token Response -> "+accessToken);
 
-        HttpEntity<String> paymentConsentRequest = createPaymentConsentObject(accessToken);
+        HttpEntity<OBWriteDomesticConsent2> paymentConsentRequest = createPaymentConsentObject(accessToken);
 
-        ResponseEntity<OBWriteDomestic2> paymentConsentResponse = sslRestTemplate.postForEntity(PAYMENTS_CONSENT_URI, paymentConsentRequest, OBWriteDomestic2.class);
+        ResponseEntity<OBWriteDomesticConsentResponse2> paymentConsentResponse = sslRestTemplate.postForEntity(PAYMENTS_CONSENT_URI, paymentConsentRequest, OBWriteDomesticConsentResponse2.class);
         logger.info("+++ Payment Consent Response -> "+paymentConsentResponse.getBody());
 
         logger.info("++++ now authorise the request "+generateAuthoriseUrl(wellKnownResponse.getBody(), paymentConsentRequest, paymentConsentResponse.getBody()));
@@ -107,7 +77,7 @@ public class SingleImmediatePaymentConsent {
     }
 
 
-    private String generateAuthoriseUrl(WellKnownResponse wellKnownResponse, HttpEntity<String> paymentConsentRequest, OBWriteDomestic2 paymentConsentResponse) throws UnsupportedEncodingException {
+    private String generateAuthoriseUrl(WellKnownResponse wellKnownResponse, HttpEntity<OBWriteDomesticConsent2> paymentConsentRequest, OBWriteDomesticConsentResponse2 paymentConsentResponse) throws UnsupportedEncodingException {
 
         StringBuilder authUrlBuilder = new StringBuilder();
 
@@ -118,7 +88,6 @@ public class SingleImmediatePaymentConsent {
         authUrlBuilder.append("&scope=openid%20payments");
         authUrlBuilder.append("&redirect_uri=");
         authUrlBuilder.append(URLEncoder.encode(restClientConfiguration.getRedirectUri(), "UTF-8"));
-        //todo - generate meaningful state
         authUrlBuilder.append("&state=ABC");
         authUrlBuilder.append("&request=");
         authUrlBuilder.append(paymentConsentResponse.getData().getConsentId());
@@ -146,7 +115,7 @@ public class SingleImmediatePaymentConsent {
     }
 
 
-    public HttpEntity<String> createPaymentConsentObject(String accessToken) {
+    public HttpEntity<OBWriteDomesticConsent2> createPaymentConsentObject(String accessToken) {
         List<MediaType> acceptTypes = new ArrayList<>();
         acceptTypes.add(MediaType.APPLICATION_JSON);
 
@@ -159,10 +128,43 @@ public class SingleImmediatePaymentConsent {
         headers.add("x-jws-signature", "ignored");
         headers.add("x-idempotency-key", generateGuid());
 
+        OBWriteDomesticConsent2 requestBody = buildJsonPayload();
 
-        HttpEntity<String> request = new HttpEntity<>(PAYMENTS_CONSENT_BODY, headers);
+        HttpEntity<OBWriteDomesticConsent2> request = new HttpEntity<>(requestBody, headers);
 
         return request;
+    }
+
+    private OBWriteDomesticConsent2 buildJsonPayload() {
+
+        // payment initiation data
+        OBWriteDataDomesticConsent2 data = new OBWriteDataDomesticConsent2().initiation(
+                        new OBDomestic2()
+                                .instructedAmount(
+                                        new OBDomestic2InstructedAmount()
+                                            .amount("120")
+                                            .currency("GBP")
+                                )
+                                .creditorAccount(
+                                        new OBCashAccountCreditor3()
+                                            .schemeName("UK.OBIE.SortCodeAccountNumber")
+                                            .identification("08080021325698")
+                                            .name("")
+                                            .secondaryIdentification("")
+                                )
+        );
+
+
+        // risk data
+        OBRisk1 risk = new OBRisk1()
+                            .paymentContextCode(OBExternalPaymentContext1Code.ECOMMERCEGOODS);
+
+        // consent request
+        OBWriteDomesticConsent2 consent = new OBWriteDomesticConsent2();
+        consent.setData(data);
+        consent.setRisk(risk);
+
+        return consent;
     }
 
     private String generateGuid() {

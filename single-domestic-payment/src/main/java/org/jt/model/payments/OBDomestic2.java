@@ -3,6 +3,7 @@ package org.jt.model.payments;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.model.*;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
@@ -15,9 +16,9 @@ import java.util.Objects;
  */
 @ApiModel(description = "The Initiation payload is sent by the initiating party to the ASPSP. It is used to request movement of funds from the debtor account to a creditor for a single domestic payment.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-11T15:43:52.706+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-17T22:15:14.722+01:00")
 
-public class OBWriteDomestic2DataInitiation   {
+public class OBDomestic2   {
   @JsonProperty("InstructionIdentification")
   private String instructionIdentification = null;
 
@@ -28,24 +29,24 @@ public class OBWriteDomestic2DataInitiation   {
   private String localInstrument = null;
 
   @JsonProperty("InstructedAmount")
-  private OBWriteDomestic2DataInitiationInstructedAmount instructedAmount = null;
+  private OBDomestic2InstructedAmount instructedAmount = null;
 
   @JsonProperty("DebtorAccount")
-  private OBWriteDomestic2DataInitiationDebtorAccount debtorAccount = null;
+  private OBCashAccountDebtor4 debtorAccount = null;
 
   @JsonProperty("CreditorAccount")
-  private OBWriteDomestic2DataInitiationCreditorAccount creditorAccount = null;
+  private OBCashAccountCreditor3 creditorAccount = null;
 
   @JsonProperty("CreditorPostalAddress")
   private OBPostalAddress6 creditorPostalAddress = null;
 
   @JsonProperty("RemittanceInformation")
-  private OBWriteDomestic2DataInitiationRemittanceInformation remittanceInformation = null;
+  private OBRemittanceInformation1 remittanceInformation = null;
 
   @JsonProperty("SupplementaryData")
   private OBSupplementaryData1 supplementaryData = null;
 
-  public OBWriteDomestic2DataInitiation instructionIdentification(String instructionIdentification) {
+  public OBDomestic2 instructionIdentification(String instructionIdentification) {
     this.instructionIdentification = instructionIdentification;
     return this;
   }
@@ -66,7 +67,7 @@ public class OBWriteDomestic2DataInitiation   {
     this.instructionIdentification = instructionIdentification;
   }
 
-  public OBWriteDomestic2DataInitiation endToEndIdentification(String endToEndIdentification) {
+  public OBDomestic2 endToEndIdentification(String endToEndIdentification) {
     this.endToEndIdentification = endToEndIdentification;
     return this;
   }
@@ -87,7 +88,7 @@ public class OBWriteDomestic2DataInitiation   {
     this.endToEndIdentification = endToEndIdentification;
   }
 
-  public OBWriteDomestic2DataInitiation localInstrument(String localInstrument) {
+  public OBDomestic2 localInstrument(String localInstrument) {
     this.localInstrument = localInstrument;
     return this;
   }
@@ -98,7 +99,7 @@ public class OBWriteDomestic2DataInitiation   {
   **/
   @ApiModelProperty(value = "")
 
-
+@Size(min=1,max=50) 
   public String getLocalInstrument() {
     return localInstrument;
   }
@@ -107,7 +108,7 @@ public class OBWriteDomestic2DataInitiation   {
     this.localInstrument = localInstrument;
   }
 
-  public OBWriteDomestic2DataInitiation instructedAmount(OBWriteDomestic2DataInitiationInstructedAmount instructedAmount) {
+  public OBDomestic2 instructedAmount(OBDomestic2InstructedAmount instructedAmount) {
     this.instructedAmount = instructedAmount;
     return this;
   }
@@ -121,15 +122,15 @@ public class OBWriteDomestic2DataInitiation   {
 
   @Valid
 
-  public OBWriteDomestic2DataInitiationInstructedAmount getInstructedAmount() {
+  public OBDomestic2InstructedAmount getInstructedAmount() {
     return instructedAmount;
   }
 
-  public void setInstructedAmount(OBWriteDomestic2DataInitiationInstructedAmount instructedAmount) {
+  public void setInstructedAmount(OBDomestic2InstructedAmount instructedAmount) {
     this.instructedAmount = instructedAmount;
   }
 
-  public OBWriteDomestic2DataInitiation debtorAccount(OBWriteDomestic2DataInitiationDebtorAccount debtorAccount) {
+  public OBDomestic2 debtorAccount(OBCashAccountDebtor4 debtorAccount) {
     this.debtorAccount = debtorAccount;
     return this;
   }
@@ -142,15 +143,15 @@ public class OBWriteDomestic2DataInitiation   {
 
   @Valid
 
-  public OBWriteDomestic2DataInitiationDebtorAccount getDebtorAccount() {
+  public OBCashAccountDebtor4 getDebtorAccount() {
     return debtorAccount;
   }
 
-  public void setDebtorAccount(OBWriteDomestic2DataInitiationDebtorAccount debtorAccount) {
+  public void setDebtorAccount(OBCashAccountDebtor4 debtorAccount) {
     this.debtorAccount = debtorAccount;
   }
 
-  public OBWriteDomestic2DataInitiation creditorAccount(OBWriteDomestic2DataInitiationCreditorAccount creditorAccount) {
+  public OBDomestic2 creditorAccount(OBCashAccountCreditor3 creditorAccount) {
     this.creditorAccount = creditorAccount;
     return this;
   }
@@ -164,15 +165,15 @@ public class OBWriteDomestic2DataInitiation   {
 
   @Valid
 
-  public OBWriteDomestic2DataInitiationCreditorAccount getCreditorAccount() {
+  public OBCashAccountCreditor3 getCreditorAccount() {
     return creditorAccount;
   }
 
-  public void setCreditorAccount(OBWriteDomestic2DataInitiationCreditorAccount creditorAccount) {
+  public void setCreditorAccount(OBCashAccountCreditor3 creditorAccount) {
     this.creditorAccount = creditorAccount;
   }
 
-  public OBWriteDomestic2DataInitiation creditorPostalAddress(OBPostalAddress6 creditorPostalAddress) {
+  public OBDomestic2 creditorPostalAddress(OBPostalAddress6 creditorPostalAddress) {
     this.creditorPostalAddress = creditorPostalAddress;
     return this;
   }
@@ -193,7 +194,7 @@ public class OBWriteDomestic2DataInitiation   {
     this.creditorPostalAddress = creditorPostalAddress;
   }
 
-  public OBWriteDomestic2DataInitiation remittanceInformation(OBWriteDomestic2DataInitiationRemittanceInformation remittanceInformation) {
+  public OBDomestic2 remittanceInformation(OBRemittanceInformation1 remittanceInformation) {
     this.remittanceInformation = remittanceInformation;
     return this;
   }
@@ -206,15 +207,15 @@ public class OBWriteDomestic2DataInitiation   {
 
   @Valid
 
-  public OBWriteDomestic2DataInitiationRemittanceInformation getRemittanceInformation() {
+  public OBRemittanceInformation1 getRemittanceInformation() {
     return remittanceInformation;
   }
 
-  public void setRemittanceInformation(OBWriteDomestic2DataInitiationRemittanceInformation remittanceInformation) {
+  public void setRemittanceInformation(OBRemittanceInformation1 remittanceInformation) {
     this.remittanceInformation = remittanceInformation;
   }
 
-  public OBWriteDomestic2DataInitiation supplementaryData(OBSupplementaryData1 supplementaryData) {
+  public OBDomestic2 supplementaryData(OBSupplementaryData1 supplementaryData) {
     this.supplementaryData = supplementaryData;
     return this;
   }
@@ -244,16 +245,16 @@ public class OBWriteDomestic2DataInitiation   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OBWriteDomestic2DataInitiation obWriteDomestic2DataInitiation = (OBWriteDomestic2DataInitiation) o;
-    return Objects.equals(this.instructionIdentification, obWriteDomestic2DataInitiation.instructionIdentification) &&
-        Objects.equals(this.endToEndIdentification, obWriteDomestic2DataInitiation.endToEndIdentification) &&
-        Objects.equals(this.localInstrument, obWriteDomestic2DataInitiation.localInstrument) &&
-        Objects.equals(this.instructedAmount, obWriteDomestic2DataInitiation.instructedAmount) &&
-        Objects.equals(this.debtorAccount, obWriteDomestic2DataInitiation.debtorAccount) &&
-        Objects.equals(this.creditorAccount, obWriteDomestic2DataInitiation.creditorAccount) &&
-        Objects.equals(this.creditorPostalAddress, obWriteDomestic2DataInitiation.creditorPostalAddress) &&
-        Objects.equals(this.remittanceInformation, obWriteDomestic2DataInitiation.remittanceInformation) &&
-        Objects.equals(this.supplementaryData, obWriteDomestic2DataInitiation.supplementaryData);
+    OBDomestic2 obDomestic2 = (OBDomestic2) o;
+    return Objects.equals(this.instructionIdentification, obDomestic2.instructionIdentification) &&
+        Objects.equals(this.endToEndIdentification, obDomestic2.endToEndIdentification) &&
+        Objects.equals(this.localInstrument, obDomestic2.localInstrument) &&
+        Objects.equals(this.instructedAmount, obDomestic2.instructedAmount) &&
+        Objects.equals(this.debtorAccount, obDomestic2.debtorAccount) &&
+        Objects.equals(this.creditorAccount, obDomestic2.creditorAccount) &&
+        Objects.equals(this.creditorPostalAddress, obDomestic2.creditorPostalAddress) &&
+        Objects.equals(this.remittanceInformation, obDomestic2.remittanceInformation) &&
+        Objects.equals(this.supplementaryData, obDomestic2.supplementaryData);
   }
 
   @Override
@@ -264,7 +265,7 @@ public class OBWriteDomestic2DataInitiation   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OBWriteDomestic2DataInitiation {\n");
+    sb.append("class OBDomestic2 {\n");
 
     sb.append("    instructionIdentification: ").append(toIndentedString(instructionIdentification)).append("\n");
     sb.append("    endToEndIdentification: ").append(toIndentedString(endToEndIdentification)).append("\n");

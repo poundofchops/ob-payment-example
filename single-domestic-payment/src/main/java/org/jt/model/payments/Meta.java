@@ -12,7 +12,7 @@ import java.util.Objects;
  */
 @ApiModel(description = "Meta Data relevant to the payload")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-11T15:43:52.706+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-17T22:15:14.722+01:00")
 
 public class Meta   {
   @JsonProperty("TotalPages")

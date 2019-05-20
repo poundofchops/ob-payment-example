@@ -1,21 +1,23 @@
 package org.jt.model.payments;
 
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
+
 import javax.validation.Valid;
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.util.Objects;
 
 /**
  * Set of elements used to provide details of a charge for the payment initiation.
  */
 @ApiModel(description = "Set of elements used to provide details of a charge for the payment initiation.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-11T15:43:52.706+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-17T22:15:14.722+01:00")
 
-public class OBWriteDomesticConsentResponse3DataCharges   {
+public class OBCharge2 {
   @JsonProperty("ChargeBearer")
   private OBChargeBearerType1Code chargeBearer = null;
 
@@ -23,9 +25,9 @@ public class OBWriteDomesticConsentResponse3DataCharges   {
   private String type = null;
 
   @JsonProperty("Amount")
-  private OBActiveOrHistoricCurrencyAndAmount amount = null;
+  private OBCharge2Amount amount = null;
 
-  public OBWriteDomesticConsentResponse3DataCharges chargeBearer(OBChargeBearerType1Code chargeBearer) {
+  public OBCharge2 chargeBearer(OBChargeBearerType1Code chargeBearer) {
     this.chargeBearer = chargeBearer;
     return this;
   }
@@ -47,7 +49,7 @@ public class OBWriteDomesticConsentResponse3DataCharges   {
     this.chargeBearer = chargeBearer;
   }
 
-  public OBWriteDomesticConsentResponse3DataCharges type(String type) {
+  public OBCharge2 type(String type) {
     this.type = type;
     return this;
   }
@@ -59,7 +61,7 @@ public class OBWriteDomesticConsentResponse3DataCharges   {
   @ApiModelProperty(required = true, value = "")
   @NotNull
 
-
+@Size(min=1,max=40) 
   public String getType() {
     return type;
   }
@@ -68,7 +70,7 @@ public class OBWriteDomesticConsentResponse3DataCharges   {
     this.type = type;
   }
 
-  public OBWriteDomesticConsentResponse3DataCharges amount(OBActiveOrHistoricCurrencyAndAmount amount) {
+  public OBCharge2 amount(OBCharge2Amount amount) {
     this.amount = amount;
     return this;
   }
@@ -82,27 +84,27 @@ public class OBWriteDomesticConsentResponse3DataCharges   {
 
   @Valid
 
-  public OBActiveOrHistoricCurrencyAndAmount getAmount() {
+  public OBCharge2Amount getAmount() {
     return amount;
   }
 
-  public void setAmount(OBActiveOrHistoricCurrencyAndAmount amount) {
+  public void setAmount(OBCharge2Amount amount) {
     this.amount = amount;
   }
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OBWriteDomesticConsentResponse3DataCharges obWriteDomesticConsentResponse3DataCharges = (OBWriteDomesticConsentResponse3DataCharges) o;
-    return Objects.equals(this.chargeBearer, obWriteDomesticConsentResponse3DataCharges.chargeBearer) &&
-        Objects.equals(this.type, obWriteDomesticConsentResponse3DataCharges.type) &&
-        Objects.equals(this.amount, obWriteDomesticConsentResponse3DataCharges.amount);
+    OBCharge2 obCharge2 = (OBCharge2) o;
+    return Objects.equals(this.chargeBearer, obCharge2.chargeBearer) &&
+        Objects.equals(this.type, obCharge2.type) &&
+        Objects.equals(this.amount, obCharge2.amount);
   }
 
   @Override
@@ -113,8 +115,8 @@ public class OBWriteDomesticConsentResponse3DataCharges   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OBWriteDomesticConsentResponse3DataCharges {\n");
-    
+    sb.append("class OBCharge2 {\n");
+
     sb.append("    chargeBearer: ").append(toIndentedString(chargeBearer)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
@@ -126,7 +128,7 @@ public class OBWriteDomesticConsentResponse3DataCharges   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

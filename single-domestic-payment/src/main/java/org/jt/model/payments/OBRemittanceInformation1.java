@@ -13,16 +13,16 @@ import java.util.Objects;
  */
 @ApiModel(description = "Information supplied to enable the matching of an entry with the items that the transfer is intended to settle, such as commercial invoices in an accounts' receivable system.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-11T15:43:52.706+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-17T22:15:14.722+01:00")
 
-public class OBWriteDomestic2DataInitiationRemittanceInformation   {
+public class OBRemittanceInformation1   {
   @JsonProperty("Unstructured")
   private String unstructured = null;
 
   @JsonProperty("Reference")
   private String reference = null;
 
-  public OBWriteDomestic2DataInitiationRemittanceInformation unstructured(String unstructured) {
+  public OBRemittanceInformation1 unstructured(String unstructured) {
     this.unstructured = unstructured;
     return this;
   }
@@ -42,7 +42,7 @@ public class OBWriteDomestic2DataInitiationRemittanceInformation   {
     this.unstructured = unstructured;
   }
 
-  public OBWriteDomestic2DataInitiationRemittanceInformation reference(String reference) {
+  public OBRemittanceInformation1 reference(String reference) {
     this.reference = reference;
     return this;
   }
@@ -71,9 +71,9 @@ public class OBWriteDomestic2DataInitiationRemittanceInformation   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OBWriteDomestic2DataInitiationRemittanceInformation obWriteDomestic2DataInitiationRemittanceInformation = (OBWriteDomestic2DataInitiationRemittanceInformation) o;
-    return Objects.equals(this.unstructured, obWriteDomestic2DataInitiationRemittanceInformation.unstructured) &&
-        Objects.equals(this.reference, obWriteDomestic2DataInitiationRemittanceInformation.reference);
+    OBRemittanceInformation1 obRemittanceInformation1 = (OBRemittanceInformation1) o;
+    return Objects.equals(this.unstructured, obRemittanceInformation1.unstructured) &&
+        Objects.equals(this.reference, obRemittanceInformation1.reference);
   }
 
   @Override
@@ -84,7 +84,7 @@ public class OBWriteDomestic2DataInitiationRemittanceInformation   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OBWriteDomestic2DataInitiationRemittanceInformation {\n");
+    sb.append("class OBRemittanceInformation1 {\n");
 
     sb.append("    unstructured: ").append(toIndentedString(unstructured)).append("\n");
     sb.append("    reference: ").append(toIndentedString(reference)).append("\n");
