@@ -1,8 +1,0 @@
-/Users/james/dev/ideaProjects/dynamic-reg/create-registration-jwt/src/test/java/org/jt/config/RegistrationJwtConfigurationTest.java
-/Users/james/dev/ideaProjects/dynamic-reg/create-registration-jwt/src/test/java/org/jt/jwt/RegistrationJwtBuilderTest.java
-/Users/james/dev/ideaProjects/dynamic-reg/create-registration-jwt/src/test/java/org/jt/jwt/JwtCollectionBuilderTest.java
-/Users/james/dev/ideaProjects/dynamic-reg/create-registration-jwt/src/test/java/org/jt/io/SigningKeyReaderTest.java
-/Users/james/dev/ideaProjects/dynamic-reg/create-registration-jwt/src/test/java/org/jt/config/ClientConfigurationTest.java
-/Users/james/dev/ideaProjects/dynamic-reg/create-registration-jwt/src/test/java/org/jt/config/GenerateOptionsConfigurationTest.java
-/Users/james/dev/ideaProjects/dynamic-reg/create-registration-jwt/src/test/java/org/jt/io/JwtFileWriterTest.java
-/Users/james/dev/ideaProjects/dynamic-reg/create-registration-jwt/src/test/java/org/jt/io/SsaFileReaderTest.java
