@@ -1,15 +1,14 @@
-package io.swagger.model;
+package org.jt.model.payments;
 
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.model.OBExternalStatus2Code;
-import org.threeten.bp.OffsetDateTime;
 import org.springframework.validation.annotation.Validated;
+
 import javax.validation.Valid;
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotNull;
+import java.time.OffsetDateTime;
+import java.util.Objects;
 
 /**
  * The multiple authorisation flow response from the ASPSP.
@@ -18,7 +17,7 @@ import javax.validation.constraints.*;
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-05-17T22:15:14.722+01:00")
 
-public class OBMultiAuthorisation1   {
+public class OBMultiAuthorisation1 {
   @JsonProperty("Status")
   private OBExternalStatus2Code status = null;
 
@@ -140,7 +139,7 @@ public class OBMultiAuthorisation1   {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -164,7 +163,7 @@ public class OBMultiAuthorisation1   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OBMultiAuthorisation1 {\n");
-    
+
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    numberRequired: ").append(toIndentedString(numberRequired)).append("\n");
     sb.append("    numberReceived: ").append(toIndentedString(numberReceived)).append("\n");
@@ -178,7 +177,7 @@ public class OBMultiAuthorisation1   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -2,16 +2,12 @@ package org.jt.model.payments;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.model.OBCharge2;
-import io.swagger.model.OBDomestic2;
-import io.swagger.model.OBMultiAuthorisation1;
-import io.swagger.model.OBTransactionIndividualStatus1Code;
 import org.springframework.validation.annotation.Validated;
-import org.threeten.bp.OffsetDateTime;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;

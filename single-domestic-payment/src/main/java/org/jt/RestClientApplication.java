@@ -15,8 +15,6 @@ public class RestClientApplication {
          */
         ConfigurableApplicationContext ctx = SpringApplication.run(RestClientApplication.class, args);
 
-        // application runs as part of context creation so can shutdown when we get to here
-//        SpringApplication.exit(ctx, () -> 0);
     }
 
 }

@@ -56,29 +56,27 @@ public class SingleImmediatePaymentConsent {
 
     @PostConstruct
     public void applicationLaunch() throws Exception{
-        logger.info(String.format("++++ Retrieving openid-configuration from %s", restClientConfiguration.getWellKnownOpenIDConfigurationUri()));
 
         ResponseEntity<WellKnownResponse> wellKnownResponse = vanillaRestTemplate.getForEntity(restClientConfiguration.getWellKnownOpenIDConfigurationUri(), WellKnownResponse.class);
         String tokenEndpointUri=wellKnownResponse.getBody().getTokenEndpoint();
-        logger.info(String.format("++++ .well-known config retrieved, token URI identified as %s", tokenEndpointUri));
+        logger.info(String.format(".well-known config retrieved, token URI identified as %s", tokenEndpointUri));
 
         ResponseEntity<AccessTokenResponse> accessTokenResponse = sslRestTemplate.postForEntity(tokenEndpointUri, createClientCredentialsAccessTokenRequestObject(), AccessTokenResponse.class);
 
         String accessToken = accessTokenResponse.getBody().getAccessToken();
-        logger.info("+++ Access Token Response -> "+accessToken);
+        logger.info("Retrieved Access Response -> "+accessToken);
 
         HttpEntity<OBWriteDomesticConsent2> paymentConsentRequest = createPaymentConsentObject(accessToken);
 
         ResponseEntity<OBWriteDomesticConsentResponse2> paymentConsentResponse = sslRestTemplate.postForEntity(PAYMENTS_CONSENT_URI, paymentConsentRequest, OBWriteDomesticConsentResponse2.class);
-        logger.info("+++ Payment Consent Response -> "+paymentConsentResponse.getBody());
+        logger.info("Payment consent submitted. Response code = "+paymentConsentResponse.getStatusCode());
+        logger.debug(paymentConsentResponse.getBody().toString());
 
-        logger.info("++++ now authorise the request "+generateAuthoriseUrl(wellKnownResponse.getBody(), paymentConsentRequest, paymentConsentResponse.getBody()));
-
+        logger.info("Now authorise the request "+generateAuthoriseUrl(wellKnownResponse.getBody(), paymentConsentRequest, paymentConsentResponse.getBody()));
     }
 
 
     private String generateAuthoriseUrl(WellKnownResponse wellKnownResponse, HttpEntity<OBWriteDomesticConsent2> paymentConsentRequest, OBWriteDomesticConsentResponse2 paymentConsentResponse) throws UnsupportedEncodingException {
-
         StringBuilder authUrlBuilder = new StringBuilder();
 
         authUrlBuilder.append(wellKnownResponse.getAuthorizationEndpoint());
@@ -96,7 +94,6 @@ public class SingleImmediatePaymentConsent {
     }
 
     public HttpEntity<MultiValueMap<String, String>> createClientCredentialsAccessTokenRequestObject(){
-
         List<MediaType> acceptTypes = new ArrayList<>();
         acceptTypes.add(MediaType.APPLICATION_JSON);
 
@@ -136,39 +133,34 @@ public class SingleImmediatePaymentConsent {
     }
 
     private OBWriteDomesticConsent2 buildJsonPayload() {
-
         // payment initiation data
         OBWriteDataDomesticConsent2 data = new OBWriteDataDomesticConsent2().initiation(
                         new OBDomestic2()
                                 .instructedAmount(
                                         new OBDomestic2InstructedAmount()
                                             .amount("120")
-                                            .currency("GBP")
+                                            .currency("EUR")
                                 )
                                 .creditorAccount(
                                         new OBCashAccountCreditor3()
                                             .schemeName("UK.OBIE.SortCodeAccountNumber")
                                             .identification("08080021325698")
-                                            .name("")
-                                            .secondaryIdentification("")
+                                            .name("Where the money goes")
+                                            .secondaryIdentification("secondary id")
                                 )
+                                .instructionIdentification("instruction id")
+                                .endToEndIdentification("e2e id")
         );
 
 
         // risk data
-        OBRisk1 risk = new OBRisk1()
-                            .paymentContextCode(OBExternalPaymentContext1Code.ECOMMERCEGOODS);
+        OBRisk1 risk = new OBRisk1().paymentContextCode(OBExternalPaymentContext1Code.ECOMMERCEGOODS);
 
         // consent request
-        OBWriteDomesticConsent2 consent = new OBWriteDomesticConsent2();
-        consent.setData(data);
-        consent.setRisk(risk);
-
-        return consent;
+        return new OBWriteDomesticConsent2().data(data).risk(risk);
     }
 
     private String generateGuid() {
-
-        return UUID.randomUUID().toString();
+        return UUID.randomUUID().toString().substring(0,32);
     }
 }

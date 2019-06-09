@@ -1,9 +1,7 @@
 package org.jt.submit;
 
 import org.jt.configuration.RestClientConfiguration;
-import org.jt.model.payments.OBWriteDataDomestic2;
-import org.jt.model.payments.OBWriteDomestic2;
-import org.jt.model.payments.OBWriteDomesticResponse2;
+import org.jt.model.payments.*;
 import org.jt.model.token.AccessTokenResponse;
 import org.jt.model.wellknown.WellKnownResponse;
 import org.slf4j.Logger;
@@ -70,12 +68,11 @@ public class SingleImmediatePaymentSubmit {
 
         HttpEntity<OBWriteDomestic2> paymentSubmitRequest = createPaymentSubmitRequest(accessToken, submitRequest);
 
-        ResponseEntity<OBWriteDomesticResponse2> paymentConsentResponse = sslRestTemplate.postForEntity(PAYMENTS_SUBMIT_URI, paymentSubmitRequest, OBWriteDomesticResponse2.class);
-        logger.info("+++ Payment Consent Response -> "+paymentConsentResponse.getBody());
+        ResponseEntity<OBWriteDomesticResponse2> paymentSubmitResponse = sslRestTemplate.postForEntity(PAYMENTS_SUBMIT_URI, paymentSubmitRequest, OBWriteDomesticResponse2.class);
+        logger.info("+++ Payment Submit Response -> "+paymentSubmitResponse.getBody());
     }
 
     private HttpEntity<OBWriteDomestic2> createPaymentSubmitRequest(String accessToken, SubmitRequest submitRequest) {
-
         List<MediaType> acceptTypes = new ArrayList<>();
         acceptTypes.add(MediaType.APPLICATION_JSON);
 
@@ -88,33 +85,48 @@ public class SingleImmediatePaymentSubmit {
         headers.add("x-jws-signature", "ignored");
         headers.add("x-idempotency-key", "ignored");
 
-        OBWriteDomestic2 paymentSubmitBody = createPaymentSubmitBody();
+        OBWriteDomestic2 paymentSubmitBody = createPaymentSubmitBody(submitRequest);
 
         HttpEntity<OBWriteDomestic2> request = new HttpEntity<OBWriteDomestic2>(paymentSubmitBody, headers);
 
         return request;
-
     }
 
-    private OBWriteDomestic2 createPaymentSubmitBody() {
+    private OBWriteDomestic2 createPaymentSubmitBody(SubmitRequest submitRequest) {
+        // payment initiation data
+        OBWriteDataDomestic2 data = new OBWriteDataDomestic2()
+                .consentId(submitRequest.getConsentId())
+                .initiation(
+                 new OBDomestic2()
+                        .instructedAmount(
+                                new OBDomestic2InstructedAmount()
+                                        .amount("120")
+                                        .currency("EUR")
+                        )
+                        .creditorAccount(
+                                new OBCashAccountCreditor3()
+                                        .schemeName("UK.OBIE.SortCodeAccountNumber")
+                                        .identification("08080021325698")
+                                        .name("Where the money goes")
+                                        .secondaryIdentification("secondary id")
+                        )
+                         .instructionIdentification("instruction id")
+                         .endToEndIdentification("e2e id")
 
-        OBWriteDomestic2 payment = new OBWriteDomestic2();
-        payment
-                .data(new OBWriteDataDomestic2()
-                        .)
-                .risk()
+                );
 
-        //todo - fill me in
-        return payment;
+
+        // risk data
+        OBRisk1 risk = new OBRisk1()
+                .paymentContextCode(OBExternalPaymentContext1Code.ECOMMERCEGOODS);
+
+        // submit payment request
+        return new OBWriteDomestic2().data(data).risk(risk);
     }
 
     private HttpEntity<MultiValueMap<String, String>> createAuthCodeAccessTokenRequestObject(SubmitRequest submitRequest) {
-//        List<MediaType> acceptTypes = new ArrayList<>();
-//        acceptTypes.add(MediaType.APPLICATION_JSON);
-
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
-//        headers.setAccept(acceptTypes);
 
         MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
         map.add("grant_type", "authorization_code");
@@ -125,8 +137,6 @@ public class SingleImmediatePaymentSubmit {
         HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(map, headers);
 
         return request;
-
     }
-
 
 }

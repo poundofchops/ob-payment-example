@@ -6,6 +6,10 @@ spring:
 #    org.hibernate: DEBUG
 #    org.jt: INFO
 
+log4j:
+  logger:
+    httpclient:
+      wire: DEBUG
 client:
   id: 8CPm73WMWNHzlRYCIiPKrA
   redirecturi: http://localhost:8080/callback
