@@ -6,23 +6,12 @@ import org.jt.model.HttpRequest;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 public class PaymentsRequestGenerator extends RequestGenerator{
 
-    private String clientCredentialsScope;
-    private String DEFAULT_CLIENT_CREDENTIALS_SCOPE="payments";
-
-    public PaymentsRequestGenerator(){
-        this.clientCredentialsScope=DEFAULT_CLIENT_CREDENTIALS_SCOPE;
-    }
-    public PaymentsRequestGenerator(String clientCredentialsScope){
-        this.clientCredentialsScope = clientCredentialsScope;
-    }
-
     @Override
     protected String getClientCredentialsScope() {
-        return clientCredentialsScope;
+        return "payments";
     }
 
     public HttpRequest createPaymentsConsentRequest(String consentCreationUri, String accessToken, String financialId,

@@ -11,7 +11,6 @@ import java.util.Map;
 
 public abstract class RequestGenerator {
 
-
     protected abstract String getClientCredentialsScope();
 
     public HttpRequest createWellKnownEndpointRequest(String wellKnownEndpointUri){
