@@ -1,5 +1,8 @@
 package org.jt.consent;
 
+import com.nimbusds.jose.JOSEException;
+import com.nimbusds.jose.crypto.RSASSASigner;
+import org.jose4j.lang.JoseException;
 import org.jt.configuration.RestClientConfiguration;
 import org.jt.model.payments.*;
 import org.jt.model.token.AccessTokenResponse;
@@ -19,6 +22,8 @@ import org.springframework.web.client.RestTemplate;
 import javax.annotation.PostConstruct;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.security.PrivateKey;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -39,6 +44,9 @@ public class SingleImmediatePaymentConsent {
     // RestTemplate for mTLS calls
     private RestTemplate sslRestTemplate;
 
+    // RSA JWT Signer
+    private PrivateKey signingKey;
+
     @Autowired
     public void setRestClientConfiguration(RestClientConfiguration restClientConfiguration){
         this.restClientConfiguration = restClientConfiguration;
@@ -52,6 +60,11 @@ public class SingleImmediatePaymentConsent {
     @Autowired
     public void setVanillaRestTemplate(RestTemplate vanillaRestTemplate){
         this.vanillaRestTemplate = vanillaRestTemplate;
+    }
+
+    @Autowired
+    public void setSigningKey(PrivateKey signingKey){
+        this.signingKey = signingKey;
     }
 
     @PostConstruct
@@ -72,25 +85,44 @@ public class SingleImmediatePaymentConsent {
         logger.info("Payment consent submitted. Response code = "+paymentConsentResponse.getStatusCode());
         logger.debug(paymentConsentResponse.getBody().toString());
 
-        logger.info("Now authorise the request "+generateAuthoriseUrl(wellKnownResponse.getBody(), paymentConsentRequest, paymentConsentResponse.getBody()));
+        logger.info("Now authorise the request "+generateAuthoriseUrl(wellKnownResponse.getBody(), paymentConsentResponse.getBody()));
     }
 
 
-    private String generateAuthoriseUrl(WellKnownResponse wellKnownResponse, HttpEntity<OBWriteDomesticConsent2> paymentConsentRequest, OBWriteDomesticConsentResponse2 paymentConsentResponse) throws UnsupportedEncodingException {
+    private String generateAuthoriseUrl(WellKnownResponse wellKnownResponse, OBWriteDomesticConsentResponse2 paymentConsentResponse) throws UnsupportedEncodingException, JoseException, ParseException {
+        String state = generateState();
+
+        RequestObject requestObject = new RequestObject
+                                        .Builder()
+                                        .consentId(paymentConsentResponse.getData().getConsentId())
+                                        .clientConfiguration(restClientConfiguration)
+                                        .state(state)
+                                        .signingKey(signingKey)
+                                        .build();
+
         StringBuilder authUrlBuilder = new StringBuilder();
 
         authUrlBuilder.append(wellKnownResponse.getAuthorizationEndpoint());
         authUrlBuilder.append("?client_id=");
         authUrlBuilder.append(restClientConfiguration.getClientId());
-        authUrlBuilder.append("&response_type=code%20id_token");
-        authUrlBuilder.append("&scope=openid%20payments");
+        authUrlBuilder.append("&response_type=");
+        authUrlBuilder.append(restClientConfiguration.getResponseTypes());
+        authUrlBuilder.append("&scope=");
+        authUrlBuilder.append(restClientConfiguration.getScopes());
         authUrlBuilder.append("&redirect_uri=");
         authUrlBuilder.append(URLEncoder.encode(restClientConfiguration.getRedirectUri(), "UTF-8"));
-        authUrlBuilder.append("&state=ABC");
+        authUrlBuilder.append("&state=");
+        authUrlBuilder.append(state);
         authUrlBuilder.append("&request=");
-        authUrlBuilder.append(paymentConsentResponse.getData().getConsentId());
+        authUrlBuilder.append(requestObject.asString());
+
+        logger.info("Consent object -> "+requestObject.asString());
 
         return authUrlBuilder.toString();
+    }
+
+    private String generateState() {
+        return "static_value";
     }
 
     public HttpEntity<MultiValueMap<String, String>> createClientCredentialsAccessTokenRequestObject(){

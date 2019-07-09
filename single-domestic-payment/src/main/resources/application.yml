@@ -12,12 +12,18 @@ log4j:
       wire: DEBUG
 client:
   id: 8CPm73WMWNHzlRYCIiPKrA
+  signing_kid: j1eN4fJOrbxS8mB-4RGz2z_Dg0U
   redirecturi: http://localhost:8080/callback
+  reduced_security_enabled: false
 
 target:
   base_uri: https://api.ulster.useinfinite.io
+  audience: https://ob.ulster.useinfinite.io
   wellknown_endpoint_url: https://api.ulster.useinfinite.io/.well-known/openid-configuration
   financial_id: 0015800001ZEZ1iAAH
+  response_types: code%20id_token
+  scopes: openid%20payments
+
 tls:
   alias:
   keystore:

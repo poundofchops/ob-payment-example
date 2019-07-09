@@ -27,3 +27,6 @@ client:
     - https://shatnersbassoon.net/openbanking/cb2
   transport_kid: YvJnFzgXAtFwIhGUZN_12w1hDBA
   signing_kid: 9xpKIuc1GDgYfAm1uo7o8DyaoEQ
+
++++ useful for debugging +++
+-Djavax.net.debug=all

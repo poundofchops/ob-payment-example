@@ -1,5 +1,6 @@
 package org.jt.configuration;
 
+import com.nimbusds.jose.crypto.RSASSASigner;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.ssl.SSLContextBuilder;
@@ -35,6 +36,9 @@ public class RestClientConfiguration {
     @Value("${target.financial_id}")
     private String financialId;
 
+    @Value("${target.audience}")
+    private String audience;
+
     @Value("${tls.keystore.location}")
     private String keyStoreLocation;
 
@@ -42,7 +46,10 @@ public class RestClientConfiguration {
     private String keyStorePassword;
 
     @Value(("${client.id}"))
-    private String keyStoreAlias;
+    private String transportKeyStoreAlias;
+
+    @Value(("${client.signing_kid}"))
+    private String signingKeyId;
 
     @Value("${tls.truststore.location}")
     private String trustStoreLocation;
@@ -50,8 +57,25 @@ public class RestClientConfiguration {
     @Value("${tls.truststore.password}")
     private String trustStorePassword;
 
+    @Value("${client.reduced_security_enabled}")
+    private boolean reducedSecurityEnabled;
+
+    @Value("${target.response_types}")
+    private String responseTypes;
+
+    @Value("${target.scopes}")
+    private String scopes;
+
     public String getClientId() {
         return clientId;
+    }
+
+    public String getResponseTypes() {
+        return responseTypes;
+    }
+
+    public String  getScopes() {
+        return scopes;
     }
 
     public String getWellKnownOpenIDConfigurationUri(){
@@ -66,6 +90,18 @@ public class RestClientConfiguration {
         return financialId;
     }
 
+    public boolean isReducedSecurityEnabled() {
+        return reducedSecurityEnabled;
+    }
+
+    public String getAudience(){
+        return audience;
+    }
+
+    public String getSigningKid() {
+        return signingKeyId;
+    }
+
     @Bean
     public RestTemplate sslRestTemplate(RestTemplateBuilder builder) throws IOException, KeyStoreException, CertificateException, NoSuchAlgorithmException, UnrecoverableKeyException, KeyManagementException {
 
@@ -78,7 +114,7 @@ public class RestClientConfiguration {
          * In this sample, truststore.jks contains ca.pem which was used to sign
          * both client.pfx and server.jks.
          *
-         * //, (map, socket) -> keyStoreAlias
+         * //, (map, socket) -> transportKeyStoreAlias
          */
         SSLContext sslContext = SSLContextBuilder.create()
                 .loadKeyMaterial(keyStore, keyStorePassword.toCharArray())
@@ -104,6 +140,13 @@ public class RestClientConfiguration {
         return builder.build();
     }
 
+    @Bean
+    public PrivateKey jwtSigningKey() throws KeyStoreException, IOException, CertificateException, NoSuchAlgorithmException, UnrecoverableKeyException {
+        KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
+        keyStore.load(new FileInputStream(ResourceUtils.getFile(keyStoreLocation)), keyStorePassword.toCharArray());
+        return (PrivateKey) keyStore.getKey("j1eN4fJOrbxS8mB-4RGz2z_Dg0U", keyStorePassword.toCharArray());
+   }
+
     @Override
     public String toString() {
         return "RestClientConfiguration{" +
@@ -113,9 +156,10 @@ public class RestClientConfiguration {
                 ", financialId='" + financialId + '\'' +
                 ", keyStoreLocation='" + keyStoreLocation + '\'' +
                 ", keyStorePassword='" + keyStorePassword + '\'' +
-                ", keyStoreAlias='" + keyStoreAlias + '\'' +
+                ", transportKeyStoreAlias='" + transportKeyStoreAlias + '\'' +
                 ", trustStoreLocation='" + trustStoreLocation + '\'' +
                 ", trustStorePassword='" + trustStorePassword + '\'' +
                 '}';
     }
+
 }

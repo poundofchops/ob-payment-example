@@ -52,24 +52,20 @@ public class SingleImmediatePaymentSubmit {
     }
 
     public void submit(SubmitRequest submitRequest){
-        logger.info("++++ Submit request received "+submitRequest);
-
-        logger.info(String.format("++++ Retrieving openid-configuration from %s", restClientConfiguration.getWellKnownOpenIDConfigurationUri()));
+        logger.info("Submit request received "+submitRequest);
 
         ResponseEntity<WellKnownResponse> wellKnownResponse = vanillaRestTemplate.getForEntity(restClientConfiguration.getWellKnownOpenIDConfigurationUri(), WellKnownResponse.class);
         String tokenEndpointUri=wellKnownResponse.getBody().getTokenEndpoint();
-        logger.info(String.format("++++ .well-known config retrieved, token URI identified as %s", tokenEndpointUri));
 
-        logger.info("Requesting Access Token");
+        logger.info("Requesting Access Token from "+tokenEndpointUri);
         ResponseEntity<AccessTokenResponse> accessTokenResponse = sslRestTemplate.postForEntity(tokenEndpointUri, createAuthCodeAccessTokenRequestObject(submitRequest), AccessTokenResponse.class);
-
         String accessToken = accessTokenResponse.getBody().getAccessToken();
-        logger.info("+++ Access Token Response -> "+accessToken);
+        logger.info("Access Token Response "+accessToken);
 
         HttpEntity<OBWriteDomestic2> paymentSubmitRequest = createPaymentSubmitRequest(accessToken, submitRequest);
 
         ResponseEntity<OBWriteDomesticResponse2> paymentSubmitResponse = sslRestTemplate.postForEntity(PAYMENTS_SUBMIT_URI, paymentSubmitRequest, OBWriteDomesticResponse2.class);
-        logger.info("+++ Payment Submit Response -> "+paymentSubmitResponse.getBody());
+        logger.info("Payment Submit Response -> "+paymentSubmitResponse.getBody());
     }
 
     private HttpEntity<OBWriteDomestic2> createPaymentSubmitRequest(String accessToken, SubmitRequest submitRequest) {
